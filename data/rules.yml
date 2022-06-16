@@ -1,0 +1,64 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say you are welcome anytime user says thanks
+  steps:
+  - intent: thanks
+  - action: utter_happy
+  - action: utter_you_are_welcome
+
+- rule: query all events
+  steps:
+  - intent: ask_all_events
+  - action: utter_button_categories
+
+- rule: query seminar events
+  steps:
+  - intent: ask_seminar_event
+  - action: select_seminar_events
+
+- rule: query speech events
+  steps:
+  - intent: ask_speach_event
+  - action: select_speech_events
+
+- rule: query theatre events events
+  steps:
+  - intent: ask_theatre_event
+  - action: select_theatre_events
+
+- rule: query painting events
+  steps:
+  - intent: ask_painting_event
+  - action: select_painting_events
+
+- rule: query athens events
+  steps:
+  - intent: ask_athens_event
+  - action: select_athens_events
+
+- rule: query thessaloniki events events
+  steps:
+  - intent: ask_thessaloniki_event
+  - action: select_thessaloniki_events
+
+- rule: button_location_events
+  steps:
+  - intent: by_location
+  - action: utter_button_locationEvents
+
+- rule: button_type_events
+  steps:
+  - intent: by_type
+  - action: utter_button_typeEvents
+
+- rule: button_date_events
+  steps:
+  - intent: by_date
+  - action: select_thessaloniki_events
+    
