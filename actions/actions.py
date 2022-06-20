@@ -125,7 +125,7 @@ class ActionSelect_Theatre_Events(Action):
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
-
+        
        try:
            
             if connection.is_connected():
