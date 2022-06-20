@@ -152,7 +152,7 @@ class ActionSelect_Theatre_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-        return[]            
+        return[]
 
 
 class ActionSelect_Painting_Events(Action):
