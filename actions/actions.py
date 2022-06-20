@@ -21,44 +21,6 @@ from datetime import datetime
 
 
 
-class ActionSelect_All_Events(Action):
-
-    def name(self) -> Text:
-        return "select_all_events"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
-            if connection.is_connected():
-                sql_select_Query = "select * from events"
-                cursor = connection.cursor() 
-                cursor.execute(sql_select_Query)
-                # get all records
-                records = cursor.fetchall()
-                dispatcher.utter_message("Total number of of results: "+json.dumps(cursor.rowcount))
-
-                for row in records:
-                    date=(row[2])
-                    time=(row[3])
-
-                dispatcher.utter_message("Event found: "+(row[1])+" at"+json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock. Location: "+(row[4])+" "+(row[5])+" Type: "+(row[6]))
-                    
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                cursor.close()
-                connection.close()
-        
-        return[]
-
 
 class ActionSelect_Seminar_Events(Action):
 
