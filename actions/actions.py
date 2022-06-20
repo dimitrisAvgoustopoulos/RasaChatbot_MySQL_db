@@ -31,14 +31,16 @@ class ActionSelect_Seminar_Events(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        try:
-            connection = mysql.connector.connect(host='localhost',
+        
+        
+        connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
             
 
+        try:
+            
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE type='Σεμινάριο'"
                 cursor = connection.cursor()  
