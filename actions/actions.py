@@ -31,10 +31,10 @@ class ActionSelect_All_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+            connection = mysql.connector.connect(host='sql300.epizy.com',
+                                                database='epiz_31996900_rasadatabase',
+                                                user='epiz_31996900',
+                                                password='mFLavtui9R4xWW', charset='utf8')
             if connection.is_connected():
                 sql_select_Query = "select * from events"
                 cursor = connection.cursor() 
@@ -71,10 +71,10 @@ class ActionSelect_Seminar_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+            connection = mysql.connector.connect(host='sql300.epizy.com',
+                                                database='epiz_31996900_rasadatabase',
+                                                user='epiz_31996900',
+                                                password='mFLavtui9R4xWW', charset='utf8')
             
 
             if connection.is_connected():
@@ -103,21 +103,21 @@ class ActionSelect_Seminar_Events(Action):
         return[]
         
 
-class ActionSelect_Speach_Events(Action):
+class ActionSelect_Speech_Events(Action):
 
 
     def name(self) -> Text:
-        return "select_speach_events"
+        return "select_speech_events"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+            connection = mysql.connector.connect(host='sql300.epizy.com',
+                                                database='epiz_31996900_rasadatabase',
+                                                user='epiz_31996900',
+                                                password='mFLavtui9R4xWW', charset='utf8')
             
 
             if connection.is_connected():
@@ -156,10 +156,10 @@ class ActionSelect_Theatre_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+            connection = mysql.connector.connect(host='sql300.epizy.com',
+                                                database='epiz_31996900_rasadatabase',
+                                                user='epiz_31996900',
+                                                password='mFLavtui9R4xWW', charset='utf8')
             
 
             if connection.is_connected():
@@ -199,10 +199,10 @@ class ActionSelect_Painting_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+            connection = mysql.connector.connect(host='sql300.epizy.com',
+                                                database='epiz_31996900_rasadatabase',
+                                                user='epiz_31996900',
+                                                password='mFLavtui9R4xWW', charset='utf8')
             
 
             if connection.is_connected():
@@ -241,10 +241,10 @@ class ActionSelect_Athens_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+            connection = mysql.connector.connect(host='sql300.epizy.com',
+                                                database='epiz_31996900_rasadatabase',
+                                                user='epiz_31996900',
+                                                password='mFLavtui9R4xWW', charset='utf8')
             
 
             if connection.is_connected():
@@ -283,10 +283,10 @@ class ActionSelect_Thessaloniki_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+            connection = mysql.connector.connect(host='sql300.epizy.com',
+                                                database='epiz_31996900_rasadatabase',
+                                                user='epiz_31996900',
+                                                password='mFLavtui9R4xWW', charset='utf8')
             
 
             if connection.is_connected():
