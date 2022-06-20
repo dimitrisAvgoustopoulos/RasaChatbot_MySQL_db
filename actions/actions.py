@@ -167,7 +167,7 @@ class ActionSelect_Painting_Events(Action):
                                              
                                              
                                              
-        connection = mysql.connector.connect(host='localhost',
+       connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
