@@ -77,12 +77,14 @@ class ActionSelect_Speach_Events(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        try:
-            connection = mysql.connector.connect(host='localhost',
+        
+        connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
             
+        
+        try:
 
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE type='Ομιλία'"
@@ -118,14 +120,14 @@ class ActionSelect_Theatre_Events(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        try:
-            connection = mysql.connector.connect(host='localhost',
+        
+        connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
-                                                password='', charset='utf8')
-            
+                                                password='', charset='utf8'
 
+        try:
+           
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE type='Θεατρική Παράσταση'"
                 cursor = connection.cursor()  
@@ -161,13 +163,15 @@ class ActionSelect_Painting_Events(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        try:
-            connection = mysql.connector.connect(host='localhost',
+                                             
+                                             
+                                             
+        connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
             
+        try:          
 
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE type='Έκθεση ζωγραφικής'"
@@ -203,14 +207,15 @@ class ActionSelect_Athens_Events(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        try:
-            connection = mysql.connector.connect(host='localhost',
+      
+        connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
-            
-
+                                                 
+                                             
+        try:
+                                             
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE city='Αθήνα'"
                 cursor = connection.cursor()  
@@ -245,14 +250,16 @@ class ActionSelect_Thessaloniki_Events(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        try:
-            connection = mysql.connector.connect(host='localhost',
+                                             
+       
+        connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
+                                                 
+                                             
+        try:
             
-
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE city='Θεσσαλονίκη'"
                 cursor = connection.cursor()  
