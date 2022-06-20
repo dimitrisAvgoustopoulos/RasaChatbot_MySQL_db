@@ -109,7 +109,7 @@ class ActionSelect_Speach_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-            return[]    
+        return[]    
 
 class ActionSelect_Theatre_Events(Action):
 
@@ -151,7 +151,7 @@ class ActionSelect_Theatre_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-            return[]            
+        return[]            
 
 
 class ActionSelect_Painting_Events(Action):
@@ -196,7 +196,7 @@ class ActionSelect_Painting_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-            return[]    
+        return[]    
 
 class ActionSelect_Athens_Events(Action):
 
@@ -239,7 +239,7 @@ class ActionSelect_Athens_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-            return[]    
+        return[]    
 
 class ActionSelect_Thessaloniki_Events(Action):
 
@@ -283,4 +283,4 @@ class ActionSelect_Thessaloniki_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-            return[]                                               
+        return[]                                               
