@@ -1,12 +1,7 @@
 version: '3.4'
 services:
 
-  duckling-server:
-    image: rasa/duckling:latest
-    ports:
-    - 8000:8000
-    networks:
-    - all
+  
 
   rasa-server:
     image: rasa-bot:latest
@@ -16,7 +11,6 @@ services:
     volumes:
     - ./actions:./app/actions
     - ./data:./app/data
-    - ./models:./app/data
     command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" --debug"
     ports:
     - '5006:5005'
