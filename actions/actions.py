@@ -31,10 +31,10 @@ class ActionSelect_All_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='sql300.epizy.com',
-                                                database='epiz_31996900_rasadatabase',
-                                                user='epiz_31996900',
-                                                password='mFLavtui9R4xWW', charset='utf8')
+            connection = mysql.connector.connect(host='localhost',
+                                                database='rasadatabase',
+                                                user='root',
+                                                password='', charset='utf8')
             if connection.is_connected():
                 sql_select_Query = "select * from events"
                 cursor = connection.cursor() 
@@ -43,19 +43,23 @@ class ActionSelect_All_Events(Action):
                 records = cursor.fetchall()
                 dispatcher.utter_message("Total number of of results: "+json.dumps(cursor.rowcount))
 
-            for row in records:
-                date=(row[2])
-                time=(row[3])
+                for row in records:
+                    date=(row[2])
+                    time=(row[3])
 
                 dispatcher.utter_message("Event found: "+(row[1])+" at"+json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                 +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock. Location: "+(row[4])+" "+(row[5])+" Type: "+(row[6]))
-                    
+
+            if connection.is_connected():
+                    cursor = connection.cursor()
+                    cursor.close()
+                    connection.close()     
+            else :
+               dispatcher.utter_message("Error while connecting to MySQL", e)
+
         except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                cursor.close()
-                connection.close()
+        
         
         return[]
 
@@ -71,10 +75,10 @@ class ActionSelect_Seminar_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='sql300.epizy.com',
-                                                database='epiz_31996900_rasadatabase',
-                                                user='epiz_31996900',
-                                                password='mFLavtui9R4xWW', charset='utf8')
+            connection = mysql.connector.connect(host='localhost',
+                                                database='rasadatabase',
+                                                user='root',
+                                                password='', charset='utf8')
             
 
             if connection.is_connected():
@@ -92,14 +96,17 @@ class ActionSelect_Seminar_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+
+            if connection.is_connected():
+                    cursor = connection.cursor()
+                    cursor.close()
+                    connection.close()
             else :
                dispatcher.utter_message("Error while connecting to MySQL", e)
         except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                    cursor.close()
-                    connection.close()
+        
+            
         return[]
         
 
@@ -114,10 +121,10 @@ class ActionSelect_Speech_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='sql300.epizy.com',
-                                                database='epiz_31996900_rasadatabase',
-                                                user='epiz_31996900',
-                                                password='mFLavtui9R4xWW', charset='utf8')
+            connection = mysql.connector.connect(host='localhost',
+                                                database='rasadatabase',
+                                                user='root',
+                                                password='', charset='utf8')
             
 
             if connection.is_connected():
@@ -135,15 +142,17 @@ class ActionSelect_Speech_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            else :
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
             if connection.is_connected():
+                    cursor = connection.cursor()
                     cursor.close()
                     connection.close()
-            return[]    
+            else :
+               dispatcher.utter_message("Error while connecting to MySQL", e)
+        except Error as e:
+                dispatcher.utter_message("Error while connecting to MySQL", e)
+        
+            
+        return[]
 
 class ActionSelect_Theatre_Events(Action):
 
@@ -156,10 +165,10 @@ class ActionSelect_Theatre_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='sql300.epizy.com',
-                                                database='epiz_31996900_rasadatabase',
-                                                user='epiz_31996900',
-                                                password='mFLavtui9R4xWW', charset='utf8')
+            connection = mysql.connector.connect(host='localhost',
+                                                database='rasadatabase',
+                                                user='root',
+                                                password='', charset='utf8')
             
 
             if connection.is_connected():
@@ -177,15 +186,17 @@ class ActionSelect_Theatre_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            else :
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
             if connection.is_connected():
+                    cursor = connection.cursor()
                     cursor.close()
                     connection.close()
-            return[]            
+            else :
+               dispatcher.utter_message("Error while connecting to MySQL", e)
+        except Error as e:
+                dispatcher.utter_message("Error while connecting to MySQL", e)
+        
+            
+        return[]
 
 
 class ActionSelect_Painting_Events(Action):
@@ -199,10 +210,10 @@ class ActionSelect_Painting_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='sql300.epizy.com',
-                                                database='epiz_31996900_rasadatabase',
-                                                user='epiz_31996900',
-                                                password='mFLavtui9R4xWW', charset='utf8')
+            connection = mysql.connector.connect(host='localhost',
+                                                database='rasadatabase',
+                                                user='root',
+                                                password='', charset='utf8')
             
 
             if connection.is_connected():
@@ -220,16 +231,17 @@ class ActionSelect_Painting_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            else :
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
             if connection.is_connected():
+                    cursor = connection.cursor()
                     cursor.close()
                     connection.close()
-            return[]    
-
+            else :
+               dispatcher.utter_message("Error while connecting to MySQL", e)
+        except Error as e:
+                dispatcher.utter_message("Error while connecting to MySQL", e)
+        
+            
+        return[]
 class ActionSelect_Athens_Events(Action):
 
 
@@ -241,10 +253,10 @@ class ActionSelect_Athens_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='sql300.epizy.com',
-                                                database='epiz_31996900_rasadatabase',
-                                                user='epiz_31996900',
-                                                password='mFLavtui9R4xWW', charset='utf8')
+            connection = mysql.connector.connect(host='localhost',
+                                                database='rasadatabase',
+                                                user='root',
+                                                password='', charset='utf8')
             
 
             if connection.is_connected():
@@ -262,15 +274,17 @@ class ActionSelect_Athens_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            else :
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
             if connection.is_connected():
+                    cursor = connection.cursor()
                     cursor.close()
                     connection.close()
-            return[]    
+            else :
+               dispatcher.utter_message("Error while connecting to MySQL", e)
+        except Error as e:
+                dispatcher.utter_message("Error while connecting to MySQL", e)
+        
+            
+        return[]
 
 class ActionSelect_Thessaloniki_Events(Action):
 
@@ -283,10 +297,10 @@ class ActionSelect_Thessaloniki_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            connection = mysql.connector.connect(host='sql300.epizy.com',
-                                                database='epiz_31996900_rasadatabase',
-                                                user='epiz_31996900',
-                                                password='mFLavtui9R4xWW', charset='utf8')
+            connection = mysql.connector.connect(host='localhost',
+                                                database='rasadatabase',
+                                                user='root',
+                                                password='', charset='utf8')
             
 
             if connection.is_connected():
@@ -304,12 +318,14 @@ class ActionSelect_Thessaloniki_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            else :
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
             if connection.is_connected():
+                    cursor = connection.cursor()
                     cursor.close()
                     connection.close()
-            return[]                                               
+            else :
+               dispatcher.utter_message("Error while connecting to MySQL", e)
+        except Error as e:
+                dispatcher.utter_message("Error while connecting to MySQL", e)
+        
+            
+        return[]                         
