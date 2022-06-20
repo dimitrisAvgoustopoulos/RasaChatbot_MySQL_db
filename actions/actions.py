@@ -124,7 +124,7 @@ class ActionSelect_Theatre_Events(Action):
         connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
-                                                password='', charset='utf8'
+                                                password='', charset='utf8')
 
        try:
            
