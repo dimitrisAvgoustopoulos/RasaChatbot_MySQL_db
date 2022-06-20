@@ -122,7 +122,7 @@ class ActionSelect_Theatre_Events(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        connection = mysql.connector.connect(host='localhost',
+       connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
