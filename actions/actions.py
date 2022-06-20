@@ -126,7 +126,7 @@ class ActionSelect_Theatre_Events(Action):
                                                 user='root',
                                                 password='', charset='utf8'
 
-        try:
+       try:
            
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE type='Θεατρική Παράσταση'"
@@ -171,7 +171,7 @@ class ActionSelect_Painting_Events(Action):
                                                 user='root',
                                                 password='', charset='utf8')
             
-        try:          
+       try:          
 
             if connection.is_connected():
                 sql_select_Query = "SELECT * FROM events WHERE type='Έκθεση ζωγραφικής'"
