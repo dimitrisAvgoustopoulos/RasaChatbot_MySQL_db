@@ -33,7 +33,7 @@ class ActionSelect_Seminar_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
    
-        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')
+        connection = mysql.connector.connect(host='sql300.epizy.com', database='epiz_31996900_rasadatabase', user='epiz_31996900', password='mFLavtui9R4xWW', charset='utf8')
            
         try:
             
@@ -74,7 +74,7 @@ class ActionSelect_Speach_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         
-        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')    
+        connection = mysql.connector.connect(host='sql300.epizy.com', database='epiz_31996900_rasadatabase', user='epiz_31996900', password='mFLavtui9R4xWW', charset='utf8')    
         
         try:
 
@@ -115,7 +115,7 @@ class ActionSelect_Theatre_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         
-        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')
+        connection = mysql.connector.connect(host='sql300.epizy.com', database='epiz_31996900_rasadatabase', user='epiz_31996900', password='mFLavtui9R4xWW', charset='utf8')
         
         try:
            
@@ -144,7 +144,6 @@ class ActionSelect_Theatre_Events(Action):
                     connection.close()
         return[]
 
-
 class ActionSelect_Painting_Events(Action):
 
 
@@ -156,7 +155,7 @@ class ActionSelect_Painting_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
                                              
-        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                      
+        connection = mysql.connector.connect(host='sql300.epizy.com', database='epiz_31996900_rasadatabase', user='epiz_31996900', password='mFLavtui9R4xWW', charset='utf8')                                      
 
         try:          
 
@@ -196,7 +195,7 @@ class ActionSelect_Athens_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
       
         
-        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                         
+        connection = mysql.connector.connect(host='sql300.epizy.com', database='epiz_31996900_rasadatabase', user='epiz_31996900', password='mFLavtui9R4xWW', charset='utf8')                                         
                                              
         try:
                                              
@@ -236,7 +235,7 @@ class ActionSelect_Thessaloniki_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
        
-        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                         
+        connection = mysql.connector.connect(host='sql300.epizy.com', database='epiz_31996900_rasadatabase', user='epiz_31996900', password='mFLavtui9R4xWW', charset='utf8')                                         
                                              
         try:
             
