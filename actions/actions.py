@@ -63,7 +63,7 @@ class ActionSelect_Seminar_Events(Action):
         return[]
         
 
-class ActionSelect_Speach_Events(Action):
+class ActionSelect_Speech_Events(Action):
 
 
     def name(self) -> Text:
