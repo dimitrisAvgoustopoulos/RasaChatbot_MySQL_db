@@ -33,7 +33,7 @@ class ActionSelect_Seminar_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         
-       connection = mysql.connector.connect(host='localhost',
+        connection = mysql.connector.connect(host='localhost',
                                                 database='rasadatabase',
                                                 user='root',
                                                 password='', charset='utf8')
