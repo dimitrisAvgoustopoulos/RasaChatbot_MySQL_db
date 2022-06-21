@@ -24,7 +24,7 @@ rules:
 
 - rule: query speech events
   steps:
-  - intent: ask_speach_event
+  - intent: ask_speech_event
   - action: select_speech_events
 
 - rule: query theatre events events
