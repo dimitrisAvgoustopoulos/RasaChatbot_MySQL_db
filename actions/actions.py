@@ -136,13 +136,13 @@ class ActionSelect_Theatre_Events(Action):
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
              else:
                  dispatcher.utter_message("Error while connecting to MySQL", e) 
-         except Error as e:
+        except Error as e:
                  dispatcher.utter_message("Error while connecting to MySQL", e)
-         finally:
+        finally:
              if connection.is_connected():
-                     cursor.close()
-                     connection.close()
-         return[]
+                    cursor.close()
+                    connection.close()
+        return[]
 
 
 class ActionSelect_Painting_Events(Action):
@@ -177,13 +177,13 @@ class ActionSelect_Painting_Events(Action):
                      +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
              else:
                  dispatcher.utter_message("Error while connecting to MySQL", e)  
-         except Error as e:
+        except Error as e:
                  dispatcher.utter_message("Error while connecting to MySQL", e)
-         finally:
-             if connection.is_connected():
+        finally:
+            if connection.is_connected():
                      cursor.close()
                      connection.close()
-         return[]    
+        return[]    
 
 class ActionSelect_Athens_Events(Action):
 
