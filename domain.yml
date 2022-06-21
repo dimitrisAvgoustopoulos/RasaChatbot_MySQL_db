@@ -11,7 +11,7 @@ intents:
   - bot_challenge
   - ask_all_events
   - ask_seminar_event
-  - ask speech_event
+  - ask_speech_event
   - ask_painting_event
   - ask_athens_event
   - ask_thessaloniki_event
