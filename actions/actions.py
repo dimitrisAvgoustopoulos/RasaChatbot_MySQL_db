@@ -32,13 +32,9 @@ class ActionSelect_Seminar_Events(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        
-        connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
-            
-
+   
+        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')
+           
         try:
             
             if connection.is_connected():
@@ -78,11 +74,7 @@ class ActionSelect_Speach_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         
-        connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
-            
+        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')    
         
         try:
 
@@ -122,10 +114,8 @@ class ActionSelect_Theatre_Events(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-       connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
+        
+       connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')
         
        try:
            
@@ -166,12 +156,8 @@ class ActionSelect_Painting_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
                                              
-                                             
-       connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
-            
+       connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                      
+       
        try:          
 
             if connection.is_connected():
@@ -209,11 +195,8 @@ class ActionSelect_Athens_Events(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
       
-        connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
-                                                 
+        
+        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                         
                                              
         try:
                                              
@@ -253,11 +236,7 @@ class ActionSelect_Thessaloniki_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
        
-        connection = mysql.connector.connect(host='localhost',
-                                                database='rasadatabase',
-                                                user='root',
-                                                password='', charset='utf8')
-                                                 
+        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                         
                                              
         try:
             
