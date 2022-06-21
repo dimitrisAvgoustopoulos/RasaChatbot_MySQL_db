@@ -115,34 +115,34 @@ class ActionSelect_Theatre_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         
-       connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')
+        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')
         
-       try:
+        try:
            
-            if connection.is_connected():
-                sql_select_Query = "SELECT * FROM events WHERE type='Θεατρική Παράσταση'"
-                cursor = connection.cursor()  
-                cursor.execute(sql_select_Query)
-                # get all records
-                records = cursor.fetchall()
-                dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
+             if connection.is_connected():
+                 sql_select_Query = "SELECT * FROM events WHERE type='Θεατρική Παράσταση'"
+                 cursor = connection.cursor()  
+                 cursor.execute(sql_select_Query)
+                 # get all records
+                 records = cursor.fetchall()
+                 dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
 
-                for row in records:
+                 for row in records:
                     date=(row[2])
                     time=(row[3])
                     
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            else:
+             else:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
-        except Error as e:
+         except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                    cursor.close()
-                    connection.close()
-        return[]
+         finally:
+             if connection.is_connected():
+                     cursor.close()
+                     connection.close()
+         return[]
 
 
 class ActionSelect_Painting_Events(Action):
@@ -156,34 +156,34 @@ class ActionSelect_Painting_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
                                              
-       connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                      
-       
-       try:          
+        connection = mysql.connector.connect(host='localhost', database='rasadatabase', user='root', password='', charset='utf8')                                      
 
-            if connection.is_connected():
-                sql_select_Query = "SELECT * FROM events WHERE type='Έκθεση ζωγραφικής'"
-                cursor = connection.cursor()  
-                cursor.execute(sql_select_Query)
-                # get all records
-                records = cursor.fetchall()
-                dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
+        try:          
 
-                for row in records:
-                    date=(row[2])
-                    time=(row[3])
-                    
-                    dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            else:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                    cursor.close()
-                    connection.close()
-        return[]    
+             if connection.is_connected():
+                 sql_select_Query = "SELECT * FROM events WHERE type='Έκθεση ζωγραφικής'"
+                 cursor = connection.cursor()  
+                 cursor.execute(sql_select_Query)
+                 # get all records
+                 records = cursor.fetchall()
+                 dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
+
+                 for row in records:
+                     date=(row[2])
+                     time=(row[3])
+
+                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
+                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
+                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+             else:
+                 dispatcher.utter_message("Error while connecting to MySQL", e)
+         except Error as e:
+                 dispatcher.utter_message("Error while connecting to MySQL", e)
+         finally:
+             if connection.is_connected():
+                     cursor.close()
+                     connection.close()
+         return[]    
 
 class ActionSelect_Athens_Events(Action):
 
