@@ -67,7 +67,7 @@ class ActionSelect_Speech_Events(Action):
 
 
     def name(self) -> Text:
-        return "select_speach_events"
+        return "select_speech_events"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
