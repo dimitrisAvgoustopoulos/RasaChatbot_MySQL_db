@@ -52,7 +52,8 @@ class ActionSelect_Seminar_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            
+            else:
+                dispatcher.utter_message("Error while connecting to MySQL", e) 
         except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
         finally:
@@ -92,7 +93,8 @@ class ActionSelect_Speach_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            
+            else:
+                dispatcher.utter_message("Error while connecting to MySQL", e)  
         except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
         finally:
@@ -132,7 +134,8 @@ class ActionSelect_Theatre_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-             
+             else:
+               dispatcher.utter_message("Error while connecting to MySQL", e) 
          except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
          finally:
@@ -172,7 +175,8 @@ class ActionSelect_Painting_Events(Action):
                      dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                      +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                      +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-             
+             else:
+                dispatcher.utter_message("Error while connecting to MySQL", e)  
          except Error as e:
                  dispatcher.utter_message("Error while connecting to MySQL", e)
          finally:
@@ -211,7 +215,8 @@ class ActionSelect_Athens_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            
+            else:
+                dispatcher.utter_message("Error while connecting to MySQL", e) 
         except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
         finally:
@@ -250,7 +255,8 @@ class ActionSelect_Thessaloniki_Events(Action):
                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
-            
+            else:
+                dispatcher.utter_message("Error while connecting to MySQL", e)  
         except Error as e:
                 dispatcher.utter_message("Error while connecting to MySQL", e)
         finally:
