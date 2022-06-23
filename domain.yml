@@ -72,7 +72,7 @@ responses:
     - title: "Seminar"
       payload: /ask_seminar_event
     - title: "Speech"
-      payload: /ask_speach_event
+      payload: /ask_speech_event
     - title: "Paintings"
       payload: /ask_painting_event
 
