@@ -10,7 +10,7 @@ intents:
   - thanks
   - bot_challenge
   - ask_seminar_event
-  - ask_speech_event
+  - ask speech_event
   - ask_painting_event
   - ask_theatre_event
   - ask_athens_event
@@ -27,39 +27,40 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Γειά σου! Πώς είσαι;"
 
   utter_introduction:
-  - text: " My name is Mitsi, i am here to support people and informate them about the events we provide."
+  - text: " Το όνομά μου είναι Μήτση, σκοπός μου είναι να παρέχω υποστήριξη προς το κοινό και να προσφέρω ενημέρωση σχετικά με τις εκδηλώσεις που προάγουμε."
 
   utter_happy:
-  - text: "Great,i am glad!"
+  - text: "Εξαιρετικά, χαίρομαι!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Αντίο"
 
   utter_you_are_welcome:
-  - text: "You are welcome!"
+  - text: "Παρακαλώ!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Είμαι ένα bot το οποίο λειτουργεί με την τεχνολογία Rasa. Είμαι σχεδιασμένη απο φοιτητές!"
 
   utter_can_i_help:
-  - text: "How can i help you?"
-  - text: "I am here to help you! What are you looking for?"
+  - text: "Πώς μπορω να σας βοηθήσω;"
+  - text: "Πώς μπορω να σας εξυπηρετήσω;"
+  - text: "Είμαι εδώ για να σε βοηθήσω! Τι ψάχνεις;"
 
   utter_button_categories:
-  - text: "Please select events by category "
+  - text: "Παρακαλώ επέλεξε εκδήλωση με βάση τις κατηγορίες"
     buttons:
-    - title: "Location"
+    - title: "Τοποθεσία"
       payload: /by_location
-    - title: "Type"
+    - title: "Tύπος"
       payload: /by_type
-    - title: "Date"
+    - title: "Ημερομηνία"
       payload: /by_date
  
   utter_button_locationEvents:
-  - text: "Select your desired location"
+  - text: "Επέλεξε την επιθεμητή τοποθεσία"
     buttons:
     - title: "Athens"
       payload: /ask_athens_event
@@ -67,17 +68,16 @@ responses:
       payload: /ask_athens_event
 
   utter_button_typeEvents:
-  - text: "Select the type of events you are interested"
+  - text: "Επέλεξε τον τύπο εκδήλωσεις που σε ενδιαφέρει"
     buttons:
-    - title: "Seminar"
+    - title: "Σεμινάριο"
       payload: /ask_seminar_event
-    - title: "Speech"
+    - title: "Ομιλία"
       payload: /ask_speech_event
-    - title: "Paintings"
+    - title: "Ζωγραφική"
       payload: /ask_painting_event
-    - title: "Theatre"
+    - title: "Θέατρο"
       payload: /ask_theatre_event
-
 
 actions:
  - select_all_events
