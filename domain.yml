@@ -9,10 +9,10 @@ intents:
   - mood_unhappy
   - thanks
   - bot_challenge
-  - ask_all_events
   - ask_seminar_event
   - ask_speech_event
   - ask_painting_event
+  - ask_theatre_event
   - ask_athens_event
   - ask_thessaloniki_event
   - by_location
@@ -75,6 +75,8 @@ responses:
       payload: /ask_speech_event
     - title: "Paintings"
       payload: /ask_painting_event
+    - title: "Theatre"
+      payload: /ask_theatre_event
 
 
 actions:
