@@ -22,6 +22,7 @@ from datetime import datetime
 
 
 
+
 class ActionSelect_Seminar_Events(Action):
 
 
@@ -33,7 +34,7 @@ class ActionSelect_Seminar_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
    
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
+        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')
            
         try:
             
@@ -49,9 +50,9 @@ class ActionSelect_Seminar_Events(Action):
                     date=(row[2])
                     time=(row[3])
                     
-                    dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
+                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
+                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
             else:
                 dispatcher.utter_message("Error while connecting to MySQL", e) 
         except Error as e:
@@ -74,7 +75,7 @@ class ActionSelect_Speech_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')    
+        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')    
         
         try:
 
@@ -90,9 +91,9 @@ class ActionSelect_Speech_Events(Action):
                     date=(row[2])
                     time=(row[3])
                     
-                    dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
+                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
+                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
             else:
                 dispatcher.utter_message("Error while connecting to MySQL", e)  
         except Error as e:
@@ -115,7 +116,7 @@ class ActionSelect_Theatre_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
+        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')
         
         try:
            
@@ -131,9 +132,9 @@ class ActionSelect_Theatre_Events(Action):
                     date=(row[2])
                     time=(row[3])
                     
-                    dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
+                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
+                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
              else:
                  dispatcher.utter_message("Error while connecting to MySQL", e) 
         except Error as e:
@@ -155,7 +156,7 @@ class ActionSelect_Painting_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
                                              
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                      
+        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')                                      
 
         try:          
 
@@ -171,9 +172,9 @@ class ActionSelect_Painting_Events(Action):
                      date=(row[2])
                      time=(row[3])
 
-                     dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
-                     +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                     +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+                     dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
+                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
+                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
              else:
                  dispatcher.utter_message("Error while connecting to MySQL", e)  
         except Error as e:
@@ -195,7 +196,7 @@ class ActionSelect_Athens_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
       
         
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                         
+        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')                                         
                                              
         try:
                                              
@@ -211,9 +212,9 @@ class ActionSelect_Athens_Events(Action):
                     date=(row[2])
                     time=(row[3])
                     
-                    dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
+                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
+                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
             else:
                 dispatcher.utter_message("Error while connecting to MySQL", e) 
         except Error as e:
@@ -235,7 +236,7 @@ class ActionSelect_Thessaloniki_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
        
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                         
+        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')                                         
                                              
         try:
             
@@ -251,9 +252,9 @@ class ActionSelect_Thessaloniki_Events(Action):
                     date=(row[2])
                     time=(row[3])
                     
-                    dispatcher.utter_message("I found the event: "+(row[1])+", type "+(row[6])+" at "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" on"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" o'clock in "+(row[4])+" at the location, "+(row[5])) 
+                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
+                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
+                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
             else:
                 dispatcher.utter_message("Error while connecting to MySQL", e)  
         except Error as e:
@@ -262,4 +263,5 @@ class ActionSelect_Thessaloniki_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-        return[]                                               
+        return[]                        
+
