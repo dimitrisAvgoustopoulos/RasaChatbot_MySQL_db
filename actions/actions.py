@@ -34,7 +34,7 @@ class ActionSelect_Seminar_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
    
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')
+        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
            
         try:
             
@@ -75,7 +75,7 @@ class ActionSelect_Speech_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')    
+        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')    
         
         try:
 
@@ -116,7 +116,7 @@ class ActionSelect_Theatre_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')
+        cconnection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
         
         try:
            
@@ -156,7 +156,7 @@ class ActionSelect_Painting_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
                                              
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')                                      
+        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                      
 
         try:          
 
@@ -196,7 +196,7 @@ class ActionSelect_Athens_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
       
         
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')                                         
+        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                         
                                              
         try:
                                              
@@ -236,7 +236,7 @@ class ActionSelect_Thessaloniki_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
                                              
        
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11501683', user='sql11501683', password='3FU8ggrJCD', charset='utf8')                                         
+        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                         
                                              
         try:
             
