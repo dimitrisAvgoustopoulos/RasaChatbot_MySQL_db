@@ -62,10 +62,10 @@ responses:
   utter_button_locationEvents:
   - text: "Επέλεξε την επιθεμητή τοποθεσία"
     buttons:
-    - title: "Athens"
+    - title: "Αθήνα"
       payload: /ask_athens_event
-    - title: "Thessaloniki"
-      payload: /ask_athens_event
+    - title: "Θεσσαλονίκη"
+      payload: /ask_thessaloniki_event
 
   utter_button_typeEvents:
   - text: "Επέλεξε τον τύπο εκδήλωσεις που σε ενδιαφέρει"
