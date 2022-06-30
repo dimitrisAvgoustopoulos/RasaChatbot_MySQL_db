@@ -116,7 +116,7 @@ class ActionSelect_Theatre_Events(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         
-        cconnection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
+        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
         
         try:
            
