@@ -1,6 +1,12 @@
 version: "3.1"
 
 rules:
+
+- rule: I am a Bot
+  steps:
+  - intent: bot_challege
+  - action: utter_iamabot
+  
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
