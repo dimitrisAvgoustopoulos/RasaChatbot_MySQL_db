@@ -66,5 +66,5 @@ rules:
 - rule: button_date_events
   steps:
   - intent: by_date
-  - action: select_thessaloniki_events
+  - action: sql_query
     
