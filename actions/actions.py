@@ -14,6 +14,7 @@ from matplotlib.font_manager import json_dump
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet, AllSlotsReset
 import mysql.connector
 from mysql.connector import Error
 import json
@@ -27,194 +28,75 @@ class ActionSelect_Seminar_Events(Action):
 
 
     def name(self) -> Text:
-        return "select_seminar_events"
+        return "sql_query"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-   
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
-           
-        try:
-            
-            if connection.is_connected():
-                sql_select_Query = "SELECT * FROM events WHERE type='Σεμινάριο'"
-                cursor = connection.cursor()  
-                cursor.execute(sql_select_Query)
-                # get all records
-                records = cursor.fetchall()
-                dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
-
-                for row in records:
-                    date=(row[2])
-                    time=(row[3])
-                    
-                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
-            else:
-                dispatcher.utter_message("Error while connecting to MySQL", e) 
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                    cursor.close()
-                    connection.close()
-        return[]
-        
-
-class ActionSelect_Speech_Events(Action):
-
-
-    def name(self) -> Text:
-        return "select_speech_events"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')    
-        
-        try:
-
-            if connection.is_connected():
-                sql_select_Query = "SELECT * FROM events WHERE type='Ομιλία'"
-                cursor = connection.cursor()  
-                cursor.execute(sql_select_Query)
-                # get all records
-                records = cursor.fetchall()
-                dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
-
-                for row in records:
-                    date=(row[2])
-                    time=(row[3])
-                    
-                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
-            else:
-                dispatcher.utter_message("Error while connecting to MySQL", e)  
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                    cursor.close()
-                    connection.close()
-        return[]    
-
-    
-class ActionSelect_Theatre_Events(Action):
-
-
-    def name(self) -> Text:
-        return "select_theatre_events"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
-        
-        try:
-           
-             if connection.is_connected():
-                 sql_select_Query = "SELECT * FROM events WHERE type='Θεατρική Παράσταση'"
-                 cursor = connection.cursor()  
-                 cursor.execute(sql_select_Query)
-                 # get all records
-                 records = cursor.fetchall()
-                 dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
-
-                 for row in records:
-                    date=(row[2])
-                    time=(row[3])
-                    
-                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
-             else:
-                 dispatcher.utter_message("Error while connecting to MySQL", e) 
-        except Error as e:
-                 dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-             if connection.is_connected():
-                    cursor.close()
-                    connection.close()
-        return[]
-
-class ActionSelect_Painting_Events(Action):
-
-
-    def name(self) -> Text:
-        return "select_painting_events"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-                                             
-                                             
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                      
-
-        try:          
-
-             if connection.is_connected():
-                 sql_select_Query = "SELECT * FROM events WHERE type='Έκθεση ζωγραφικής'"
-                 cursor = connection.cursor()  
-                 cursor.execute(sql_select_Query)
-                 # get all records
-                 records = cursor.fetchall()
-                 dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
-
-                 for row in records:
-                     date=(row[2])
-                     time=(row[3])
-
-                     dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
-             else:
-                 dispatcher.utter_message("Error while connecting to MySQL", e)  
-        except Error as e:
-                 dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                     cursor.close()
-                     connection.close()
-        return[]    
-
-class ActionSelect_Athens_Events(Action):
-
-
-    def name(self) -> Text:
-        return "select_athens_events"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        SeminarSlotValue=tracker.get_slot("seminar")
+        SpeechSlotValue=tracker.get_slot("speech")
+        TheatreSlotValue=tracker.get_slot("theatre")
+        PaintingSlotValue=tracker.get_slot("painting")
+        LocationSlotValue=tracker.get_slot("location")
       
+      
+        sqltypevar=""
+        sqlcityvar=""
         
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                         
-                                             
+        if SeminarSlotValue=="σεμινάρια" or SeminarSlotValue=="σεμινάριο":
+
+                dispatcher.utter_message("keyword: {}".format(SeminarSlotValue))
+                sqltypevar='Σεμινάριο'
+
+        elif SpeechSlotValue=="ομιλίες" or SpeechSlotValue=="ομιλία":
+
+                dispatcher.utter_message("keyword: {}".format(SpeechSlotValue))
+                sqltypevar='Ομιλία'
+            
+        elif TheatreSlotValue=="θέατρο" or TheatreSlotValue=="θεατρικές παραστάσεις" or TheatreSlotValue=="θεατρική παράσταση":
+
+                dispatcher.utter_message("keyword: {}".format(TheatreSlotValue))
+                sqltypevar='Θεατρική Παράσταση'
+        
+        elif PaintingSlotValue=="ζωγραφική" or  PaintingSlotValue=="έκθεση ζωγραφικής" or PaintingSlotValue=="εκθέσεις ζωγραφικής":
+
+                dispatcher.utter_message("keyword: {}".format(PaintingSlotValue))
+                sqltypevar='Έκθεση ζωγραφικής'
+
+        elif LocationSlotValue=="Αθήνα":
+
+                dispatcher.utter_message("keyword: {}".format(LocationSlotValue))
+                sqlcityvar='Αθήνα' 
+
+        elif LocationSlotValue=="Θεσσαλονίκη":
+
+                dispatcher.utter_message("keyword: {}".format(LocationSlotValue))
+                sqlcityvar='Θεσσαλονίκη'
+
+
+
+        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
+           
         try:
-                                             
+            
             if connection.is_connected():
-                sql_select_Query = "SELECT * FROM events WHERE city='Αθήνα'"
+                sql_select_Query = "SELECT * FROM events WHERE type='%s' OR city='%s'" % (sqltypevar, sqlcityvar)
                 cursor = connection.cursor()  
                 cursor.execute(sql_select_Query)
                 # get all records
                 records = cursor.fetchall()
-                dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
+                dispatcher.utter_message("Συνολικός αριθμός αποτελεσμάτων: "+json.dumps(cursor.rowcount))
 
                 for row in records:
                     date=(row[2])
                     time=(row[3])
                     
                     dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
+                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στις"
+                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" στην "+(row[4])+" στην τοποθεσία, "+(row[5])) 
+
+                
             else:
                 dispatcher.utter_message("Error while connecting to MySQL", e) 
         except Error as e:
@@ -223,45 +105,6 @@ class ActionSelect_Athens_Events(Action):
             if connection.is_connected():
                     cursor.close()
                     connection.close()
-        return[]    
 
-class ActionSelect_Thessaloniki_Events(Action):
-
-
-    def name(self) -> Text:
-        return "select_thessaloniki_events"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-                                             
-       
-        connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')                                         
-                                             
-        try:
-            
-            if connection.is_connected():
-                sql_select_Query = "SELECT * FROM events WHERE city='Θεσσαλονίκη'"
-                cursor = connection.cursor()  
-                cursor.execute(sql_select_Query)
-                # get all records
-                records = cursor.fetchall()
-                dispatcher.utter_message("Total number of results: "+json.dumps(cursor.rowcount))
-
-                for row in records:
-                    date=(row[2])
-                    time=(row[3])
-                    
-                    dispatcher.utter_message("Βρήκα την εκδήλωση: "+(row[1])+", τύπος "+(row[6])+" στις "
-                    +json.dumps(date, indent=4, sort_keys=True, default=str)+" στην"
-                    +json.dumps(time, indent=4, sort_keys=True, default=str)+" ηώρα "+(row[4])+" στην τοποθεσία, "+(row[5])) 
-            else:
-                dispatcher.utter_message("Error while connecting to MySQL", e)  
-        except Error as e:
-                dispatcher.utter_message("Error while connecting to MySQL", e)
-        finally:
-            if connection.is_connected():
-                    cursor.close()
-                    connection.close()
-        return[]                        
-
+        return[AllSlotsReset()]
+        
