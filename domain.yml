@@ -9,6 +9,7 @@ intents:
   - mood_unhappy
   - thanks
   - bot_challenge
+  - ask_all_events
   - ask_seminar_event
   - ask_speech_event
   - ask_painting_event
@@ -19,9 +20,40 @@ intents:
   - by_type
   - by_date
 
+entities:
+  - Location
+  - Date
+  - Seminar
+  - Speech
+  - Painting
+  - Theatre 
 
-
-
+slots:
+  location:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Location
+  seminar:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Seminar
+  speech:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Speech
+  painting:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Painting
+  theatre:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Theatre
 
 
 
@@ -60,33 +92,27 @@ responses:
       payload: /by_date
  
   utter_button_locationEvents:
-  - text: "Επέλεξε την επιθεμητή τοποθεσία"
+  - text: "Επέλεξε την επιθυμητή τοποθεσία"
     buttons:
     - title: "Αθήνα"
-      payload: /ask_athens_event
+      payload: '/ask_athens_event{"Location":"Αθήνα"}'
     - title: "Θεσσαλονίκη"
-      payload: /ask_thessaloniki_event
+      payload: '/ask_thessaloniki_event{"Location":"Θεσσαλονίκη"}'
 
   utter_button_typeEvents:
   - text: "Επέλεξε τον τύπο εκδήλωσεις που σε ενδιαφέρει"
     buttons:
     - title: "Σεμινάριο"
-      payload: /ask_seminar_event
+      payload: '/ask_seminar_event{"Seminar":"σεμινάριο"}'
     - title: "Ομιλία"
-      payload: /ask_speech_event
+      payload: '/ask_speech_event{"Speech":"ομιλία"}'
     - title: "Ζωγραφική"
-      payload: /ask_painting_event
+      payload: '/ask_painting_event{"Painting":"ζωγραφική"}'
     - title: "Θέατρο"
-      payload: /ask_theatre_event
+      payload: '/ask_theatre_event{"Theatre":"θέατρο"}'
 
 actions:
- - select_all_events
- - select_seminar_events
- - select_speech_events
- - select_theatre_events
- - select_painting_events
- - select_athens_events
- - select_thessaloniki_events
+ - sql_query
 
 session_config:
   session_expiration_time: 60
