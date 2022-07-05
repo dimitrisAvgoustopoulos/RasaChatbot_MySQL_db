@@ -4,9 +4,9 @@ rules:
 
 - rule: I am a Bot
   steps:
-  - intent: bot_challege
+  - intent: bot_challenge
   - action: utter_iamabot
-  
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -26,32 +26,32 @@ rules:
 - rule: query seminar events
   steps:
   - intent: ask_seminar_event
-  - action: select_seminar_events
+  - action: sql_query
 
 - rule: query speech events
   steps:
   - intent: ask_speech_event
-  - action: select_speech_events
+  - action: sql_query
 
 - rule: query theatre events events
   steps:
   - intent: ask_theatre_event
-  - action: select_theatre_events
+  - action: sql_query
 
 - rule: query painting events
   steps:
   - intent: ask_painting_event
-  - action: select_painting_events
+  - action: sql_query
 
 - rule: query athens events
   steps:
   - intent: ask_athens_event
-  - action: select_athens_events
+  - action: sql_query
 
 - rule: query thessaloniki events events
   steps:
   - intent: ask_thessaloniki_event
-  - action: select_thessaloniki_events
+  - action: sql_query
 
 - rule: button_location_events
   steps:
