@@ -16,6 +16,7 @@ intents:
   - ask_theatre_event
   - ask_athens_event
   - ask_thessaloniki_event
+  - ask_type_and_location
   - by_location
   - by_type
   - by_date
@@ -90,7 +91,8 @@ responses:
       payload: /by_type
     - title: "Ημερομηνία"
       payload: /by_date
- 
+
+ #buttons with slot value
   utter_button_locationEvents:
   - text: "Επέλεξε την επιθυμητή τοποθεσία"
     buttons:
@@ -113,6 +115,7 @@ responses:
 
 actions:
  - sql_query
+ - sql_multiple_query
 
 session_config:
   session_expiration_time: 60
