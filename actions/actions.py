@@ -188,7 +188,7 @@ class Action_SQL_Multiple_Query(Action):
 
         elif  (( PaA_type=="ζωγραφική" or PaA_type=="έκθεση ζωγραφικής" or PaA_type=="εκθέσεις ζωγραφικής") and  PaA_location=="Αθήνα"):
        
-                dispatcher.utter_message("keywords: {},{}".format( SeA_type,SeA_location))
+                dispatcher.utter_message("keywords: {},{}".format( PaA_type,PaA_location))
                 sqltypevar="Έκθεση ζωγραφικής"
                 sqlcityvar="Αθήνα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar) 
