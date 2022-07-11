@@ -51,39 +51,40 @@ class Action_SQL_Query(Action):
         
         if (latEntitType=="Seminar"):
 
-                dispatcher.utter_message("Type Kategory: {}".format(latEntitType))
+                dispatcher.utter_message("Κατηγορία: {}".format(latEntitType))
                 sqltypevar='Σεμινάριο'
                 sqlQuery="SELECT * FROM events WHERE type='%s'" % (sqltypevar)
 
         elif (latEntitType=="Speech"):
 
-                dispatcher.utter_message("Type Kategory: {}".format(latEntitType))
+                dispatcher.utter_message("Κατηγορία: {}".format(latEntitType))
                 sqltypevar='Ομιλία'
                 sqlQuery="SELECT * FROM events WHERE type='%s'" % (sqltypevar)
             
         elif (latEntitType=="Theatre"):
 
-                dispatcher.utter_message("Type Kategory: {}".format(latEntitType))
+                dispatcher.utter_message("Κατηγορία: {}".format(latEntitType))
                 sqltypevar='Θεατρική Παράσταση'
                 sqlQuery="SELECT * FROM events WHERE type='%s'" % (sqltypevar)
         
         elif (latEntitType=="Painting"):
 
-                dispatcher.utter_message("Type Kategory: {}".format(latEntitType))
+                dispatcher.utter_message("Κατηγορία: {}".format(latEntitType))
                 sqltypevar='Έκθεση ζωγραφικής'
                 sqlQuery="SELECT * FROM events WHERE type='%s'" % (sqltypevar)
 
         elif (latEntitValue=="Αθήνα"):
 
-                dispatcher.utter_message("Location keyword: {}".format(latEntitValue))
+                dispatcher.utter_message("Κeyword Τοποθεσίας: {}".format(latEntitValue))
                 sqlcityvar='Αθήνα' 
                 sqlQuery="SELECT * FROM events WHERE city='%s'" % (sqlcityvar)
 
         elif (latEntitValue=="Θεσσαλονίκη"):
 
-                dispatcher.utter_message("Location keyword: {}".format(latEntitValue))
+                dispatcher.utter_message("Location Τοποθεσίας: {}".format(latEntitValue))
                 sqlcityvar='Θεσσαλονίκη'
                 sqlQuery="SELECT * FROM events WHERE city='%s'" % (sqlcityvar)
+       
 
 
         #SQL        
@@ -193,7 +194,6 @@ class Action_SQL_Multiple_Query(Action):
                 sqlcityvar="Αθήνα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar) 
 
-
         #thessaloniki
         if (( SeTh_type=="σεμινάρια" or SeTh_type=="σεμινάριο") and SeTh_location=="Θεσσαλονίκη"):
        
@@ -257,3 +257,5 @@ class Action_SQL_Multiple_Query(Action):
                     cursor.close()
                     connection.close()
         return[]
+
+
