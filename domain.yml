@@ -14,8 +14,11 @@ intents:
   - ask_speech_event
   - ask_painting_event
   - ask_theatre_event
+  - ask_concert_event
+  - ask_festival_event
   - ask_athens_event
   - ask_thessaloniki_event
+  - ask_patras_event
   - ask_type_and_location
   - by_location
   - by_type
@@ -28,6 +31,8 @@ entities:
   - Speech
   - Painting
   - Theatre 
+  - Concert
+  - Festival
 
 slots:
   location:
@@ -55,7 +60,16 @@ slots:
     mappings:
     - type: from_entity
       entity: Theatre
-
+  concert:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Concert
+  festival:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Festival
 
 
 responses:
@@ -112,10 +126,15 @@ responses:
       payload: '/ask_painting_event{"Painting":"ζωγραφική"}'
     - title: "Θέατρο"
       payload: '/ask_theatre_event{"Theatre":"θέατρο"}'
+    - title: "Συναυλία"
+      payload: '/ask_concert_event{"Concert":"συναυλία"}'
+    - title: "Φεστιβάλ"
+      payload: '/ask_festival_event{"Festival":"φεστιβάλ"}'
 
 actions:
  - sql_query
  - sql_multiple_query
+ - eventDates
 
 session_config:
   session_expiration_time: 60
