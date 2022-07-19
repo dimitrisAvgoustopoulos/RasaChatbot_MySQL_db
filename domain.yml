@@ -102,7 +102,7 @@ responses:
       payload: '/ask_thessaloniki_event{"Location":"Θεσσαλονίκη"}'
 
   utter_button_typeEvents:
-  - text: "Επέλεξε τον τύπο εκδήλωσεις που σε ενδιαφέρει"
+  - text: "Επέλεξε τον τύπο εκδήλωσης που σε ενδιαφέρει"
     buttons:
     - title: "Σεμινάριο"
       payload: '/ask_seminar_event{"Seminar":"σεμινάριο"}'
