@@ -33,7 +33,7 @@ rules:
   - intent: ask_speech_event
   - action: sql_query
 
-- rule: query theatre events events
+- rule: query theatre events
   steps:
   - intent: ask_theatre_event
   - action: sql_query
@@ -43,15 +43,31 @@ rules:
   - intent: ask_painting_event
   - action: sql_query
 
+- rule: query concert events
+  steps:
+  - intent: ask_concert_event
+  - action: sql_query
+
+- rule: query festival events
+  steps:
+  - intent: ask_festival_event
+  - action: sql_query
+
 - rule: query athens events
   steps:
   - intent: ask_athens_event
   - action: sql_query
 
-- rule: query thessaloniki events events
+- rule: query thessaloniki events
   steps:
   - intent: ask_thessaloniki_event
   - action: sql_query
+
+- rule: query patras events
+  steps:
+  - intent: ask_patras_event
+  - action: sql_query
+
 
 - rule: query events with type and location
   steps:
@@ -71,5 +87,5 @@ rules:
 - rule: button_date_events
   steps:
   - intent: by_date
-  - action: sql_query
+  - action: eventDates
     
