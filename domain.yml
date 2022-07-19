@@ -114,6 +114,8 @@ responses:
       payload: '/ask_athens_event{"Location":"Αθήνα"}'
     - title: "Θεσσαλονίκη"
       payload: '/ask_thessaloniki_event{"Location":"Θεσσαλονίκη"}'
+    - title: "Πάτρα"
+      payload: '/ask_patras_event{"Location":"Πάτρα"}'
 
   utter_button_typeEvents:
   - text: "Επέλεξε τον τύπο εκδήλωσης που σε ενδιαφέρει"
