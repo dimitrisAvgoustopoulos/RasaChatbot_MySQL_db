@@ -18,6 +18,11 @@ rules:
   - action: utter_happy
   - action: utter_you_are_welcome
 
+- rule: not understanding
+  steps:
+  - intent: nlu_fallback
+  - action: utter_not_understanding
+
 - rule: query all events
   steps:
   - intent: ask_all_events
