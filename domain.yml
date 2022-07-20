@@ -23,6 +23,7 @@ intents:
   - by_location
   - by_type
   - by_date
+  - nlu_fallback
 
 entities:
   - Location
@@ -89,12 +90,15 @@ responses:
   - text: "Παρακαλώ!"
 
   utter_iamabot:
-  - text: "Είμαι ένα bot το οποίο λειτουργεί με την τεχνολογία Rasa. Είμαι σχεδιασμένη απο φοιτητές!"
+  - text: "Είμαι ένα bot το οποίο λειτουργεί με την τεχνολογία Rasa. Είμαι σχεδιασμένη απο φοιτητές του Πανεπηστιμίου Αιγαίου!"
 
   utter_can_i_help:
   - text: "Πώς μπορω να σας βοηθήσω;"
   - text: "Πώς μπορω να σας εξυπηρετήσω;"
   - text: "Είμαι εδώ για να σε βοηθήσω! Τι ψάχνεις;"
+
+  utter_not_understanding:
+  - text: "Δέν μπορώ να καταλάβω τι εννοείς.. ή αυτο που ζητάς μάλλον δεν υπάρχει. Θες να ξαναδοκιμάσεις;"
 
   utter_button_categories:
   - text: "Παρακαλώ επέλεξε εκδήλωση με βάση τις κατηγορίες"
@@ -116,6 +120,7 @@ responses:
       payload: '/ask_thessaloniki_event{"Location":"Θεσσαλονίκη"}'
     - title: "Πάτρα"
       payload: '/ask_patras_event{"Location":"Πάτρα"}'
+
 
   utter_button_typeEvents:
   - text: "Επέλεξε τον τύπο εκδήλωσης που σε ενδιαφέρει"
