@@ -256,7 +256,7 @@ nlu:
     - θέλω να με ενημερώσεις για [ζωγραφική](Painting)
     - θέλω να με ενημερώσεις για [εκθέσεις ζωγραφικής](Painting)
     - ψάχνω για [ζωγραφική](Painting) 
-    - θέλω [έκθεση ζωγραφικής](Painting)
+    - θέλω [έκθεση ζωγραφικής](Exhibition)
     - ψάχνω για [εκθέσεις ζωγραφικής](Painting)
 
 - intent: ask_concert_event
@@ -330,6 +330,7 @@ nlu:
     - υπάρχουν καθόλου εκδηλώσεις στην [Αθήνα](Location);
     - υπάρχουν καθόλου events στην [Αθήνα](Location);
     - τι υπάρχει στην [Αθήνα](Location) απο εκδηλώσεις;
+    - τι υπάρχει στην [Αθήνα](Location);
     - ποιά γεγονότα υπάρχουν στην [Αθήνα](Location);
     - μπορώ να πάω σε events στην [Αθήνα](Location);
     - μπορώ να πάω σε εκδηλώσεις στην [Αθήνα](Location);
@@ -359,6 +360,7 @@ nlu:
     - υπάρχουν καθόλου εκδηλώσεις στην [Θεσσαλονίκη](Location);
     - υπάρχουν καθόλου events στην [Θεσσαλονίκη](Location);
     - τι υπάρχει στην [Θεσσαλονίκη](Location) απο εκδηλώσεις;
+    - τι υπάρχει στην [Θεσσαλονίκη(Location);
     - ποιά γεγονότα υπάρχουν στην [Θεσσαλονίκη](Location);
     - μπορώ να πάω σε events στην [Θεσσαλονίκη](Location);
     - μπορώ να πάω σε εκδηλώσεις στην [Θεσσαλονίκη](Location);
@@ -386,6 +388,7 @@ nlu:
     - υπάρχουν καθόλου εκδηλώσεις στην [Πάτρα](Location);
     - υπάρχουν καθόλου events στην [Πάτρα](Location);
     - τι υπάρχει στην [Πάτρα](Location) απο εκδηλώσεις;
+    - τι υπάρχει στην [Πάτρα](Location);
     - ποιά γεγονότα υπάρχουν στην [Πάτρα](Location);
     - μπορώ να πάω σε events στην [Πάτρα](Location);
     - μπορώ να πάω σε εκδηλώσεις στην [Πάτρα](Location);
@@ -604,6 +607,7 @@ nlu:
     - ψάχνω για [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
 
     - [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
     - [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
     - [Ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
     - [Ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
@@ -665,6 +669,7 @@ nlu:
     - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
     - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
     - [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
     - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
     - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
     - [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
@@ -700,6 +705,7 @@ nlu:
     - [Συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
     - [Συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
     - [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
     - [Συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
     - [Συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
     - υπάρχει [συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
