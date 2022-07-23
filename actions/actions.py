@@ -39,11 +39,15 @@ class Action_SQL_Query(Action):
         
         cursor=true
 
+#Python and Rasa for actions
+
         # SeminarSlotValue=tracker.get_slot("seminar")
         # SpeechSlotValue=tracker.get_slot("speech")
         # TheatreSlotValue=tracker.get_slot("theatre")
         # PaintingSlotValue=tracker.get_slot("painting")
         # LocationSlotValue=tracker.get_slot("location")
+
+        # latEntitType= tracker.latest_message['intents'].get('name')
 
         latEntitType= tracker.latest_message['entities'][0]['entity']
         latEntitValue= tracker.latest_message['entities'][0]['value']
@@ -74,7 +78,7 @@ class Action_SQL_Query(Action):
         elif (latEntitType=="Painting"):
 
                 dispatcher.utter_message("Κατηγορία: {}".format(latEntitType))
-                sqltypevar='Έκθεση ζωγραφικής'
+                sqltypevar='Ζωγραφική'
                 sqlQuery="SELECT * FROM events WHERE type='%s'" % (sqltypevar)
 
         elif (latEntitType=="Concert"):
@@ -90,19 +94,19 @@ class Action_SQL_Query(Action):
                 sqlQuery="SELECT * FROM events WHERE type='%s'" % (sqltypevar)
 
 
-        elif (latEntitValue=="Αθήνα"):
+        elif (latEntitValue=="Αθήνα" or latEntitValue=="αθήνα"):
 
                 dispatcher.utter_message("Κeyword Τοποθεσίας: {}".format(latEntitValue))
                 sqlcityvar='Αθήνα' 
                 sqlQuery="SELECT * FROM events WHERE city='%s'" % (sqlcityvar)
 
-        elif (latEntitValue=="Θεσσαλονίκη"):
+        elif (latEntitValue=="Θεσσαλονίκη" or latEntitValue=="θεσσαλονίκη" ):
 
                 dispatcher.utter_message("Location Τοποθεσίας: {}".format(latEntitValue))
                 sqlcityvar='Θεσσαλονίκη'
                 sqlQuery="SELECT * FROM events WHERE city='%s'" % (sqlcityvar)
         
-        elif (latEntitValue=="Πάτρα"):
+        elif (latEntitValue=="Πάτρα" or latEntitValue=="πάτρα"):
 
                 dispatcher.utter_message("Location Τοποθεσίας: {}".format(latEntitValue))
                 sqlcityvar='Πάτρα'
@@ -110,7 +114,7 @@ class Action_SQL_Query(Action):
        
 
 
-        #SQL        
+#SQL        
  
 
         connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
@@ -157,6 +161,8 @@ class Action_SQL_Multiple_Query(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         cursor=true
+
+#Python and Rasa for actions
 
         #for athens events
         SeA_type= next(tracker.get_latest_entity_values(entity_type="Seminar",entity_group="1",entity_role="SeminarInAthens"), None)
@@ -222,42 +228,42 @@ class Action_SQL_Multiple_Query(Action):
         sqlQuery=""
         
         #athens
-        if (( SeA_type=="σεμινάρια" or SeA_type=="σεμινάριο") and SeA_location=="Αθήνα"):
+        if (( SeA_type=="σεμινάρια" or SeA_type=="σεμινάριο") and (SeA_location=="Αθήνα" or SeA_location=="αθήνα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( SeA_type,SeA_location))
                 sqltypevar="Σεμινάριο"
                 sqlcityvar="Αθήνα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( SpA_type=="ομιλίες" or SpA_type=="ομιλία") and SpA_location=="Αθήνα"):
+        elif  (( SpA_type=="ομιλίες" or SpA_type=="ομιλία") and (SpA_location=="Αθήνα" or SpA_location=="αθήνα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( SpA_type,SpA_location))
                 sqltypevar="Ομιλία"
                 sqlcityvar="Αθήνα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
         
-        elif  (( ThA_type=="θέατρο" or ThA_type=="θεατρική παράσταση" or ThA_type=="θεατρικές παραστάσεις") and ThA_location=="Αθήνα"):
+        elif  (( ThA_type=="θέατρο" or ThA_type=="θεατρική παράσταση" or ThA_type=="θεατρικές παραστάσεις") and (ThA_location=="Αθήνα" or ThA_location=="αθήνα")):
 
                 dispatcher.utter_message("keywords: {},{}".format( ThA_type,ThA_location))
                 sqltypevar="Θέατρο"
                 sqlcityvar="Αθήνα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( PaA_type=="ζωγραφική" or PaA_type=="έκθεση ζωγραφικής" or PaA_type=="εκθέσεις ζωγραφικής") and  PaA_location=="Αθήνα"):
+        elif  (( PaA_type=="ζωγραφική" or PaA_type=="έκθεση ζωγραφικής" or PaA_type=="εκθέσεις ζωγραφικής") and  (PaA_location=="Αθήνα" or PaA_location=="αθήνα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( PaA_type,PaA_location))
-                sqltypevar="Έκθεση ζωγραφικής"
+                sqltypevar="Ζωγραφική"
                 sqlcityvar="Αθήνα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar) 
 
-        elif  (( CoA_type=="συναυλίες" or CoA_type=="συναυλία") and  CoA_location=="Αθήνα"):
+        elif  (( CoA_type=="συναυλίες" or CoA_type=="συναυλία") and  (CoA_location=="Αθήνα" or CoA_location=="αθήνα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( CoA_type,CoA_location))
                 sqltypevar="Συναυλία"
                 sqlcityvar="Αθήνα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( FeA_type=="φεστιβάλ") and  FeA_location=="Αθήνα"):
+        elif  (( FeA_type=="φεστιβάλ") and  (FeA_location=="Αθήνα" or FeA_location=="αθήνα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( FeA_type,FeA_location))
                 sqltypevar="Φεστιβάλ"
@@ -266,42 +272,42 @@ class Action_SQL_Multiple_Query(Action):
 
 
         #thessaloniki
-        if (( SeTh_type=="σεμινάρια" or SeTh_type=="σεμινάριο") and SeTh_location=="Θεσσαλονίκη"):
+        if (( SeTh_type=="σεμινάρια" or SeTh_type=="σεμινάριο") and (SeTh_location=="Θεσσαλονίκη" or SeTh_location=="θεσσαλονίκη")):
        
                 dispatcher.utter_message("keywords: {},{}".format( SeTh_type,SeTh_location))
                 sqltypevar="Σεμινάριο"
                 sqlcityvar="Θεσσαλονίκη"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( SpTh_type=="ομιλίες" or SpTh_type=="ομιλία") and SpTh_location=="Θεσσαλονίκη"):
+        elif  (( SpTh_type=="ομιλίες" or SpTh_type=="ομιλία") and (SpTh_location=="Θεσσαλονίκη" or SpTh_location=="θεσσαλονίκη")):
        
                 dispatcher.utter_message("keywords: {},{}".format( SpTh_type,SpTh_location))
                 sqltypevar="Ομιλία"
                 sqlcityvar="Θεσσαλονίκη"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
         
-        elif  (( ThTh_type=="θέατρο" or ThTh_type=="θεατρική παράσταση" or ThTh_type=="θεατρικές παραστάσεις") and ThTh_location=="Θεσσαλονίκη"):
+        elif  (( ThTh_type=="θέατρο" or ThTh_type=="θεατρική παράσταση" or ThTh_type=="θεατρικές παραστάσεις") and (ThTh_location=="Θεσσαλονίκη" or ThTh_location=="θεσσαλονίκη")):
 
                 dispatcher.utter_message("keywords: {},{}".format( ThTh_type,ThTh_location))
                 sqltypevar="Θέατρο"
                 sqlcityvar="Θεσσαλονίκη"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( PaTh_type=="ζωγραφική" or PaTh_type=="έκθεση ζωγραφικής" or PaTh_type=="εκθέσεις ζωγραφικής") and  PaTh_location=="Θεσσαλονίκη"):
+        elif  (( PaTh_type=="ζωγραφική" or PaTh_type=="έκθεση ζωγραφικής" or PaTh_type=="εκθέσεις ζωγραφικής") and  (PaTh_location=="Θεσσαλονίκη" or PaTh_location=="θεσσαλονίκη")):
        
                 dispatcher.utter_message("keywords: {},{}".format( PaTh_type,PaTh_location))
-                sqltypevar="Έκθεση ζωγραφικής"
+                sqltypevar="Ζωγραφική"
                 sqlcityvar="Θεσσαλονίκη"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( CoTh_type=="συναυλίες" or CoTh_type=="συναυλία") and  CoTh_location=="Θεσσαλονίκη"):
+        elif  (( CoTh_type=="συναυλίες" or CoTh_type=="συναυλία") and  (CoTh_location=="Θεσσαλονίκη" or CoTh_location=="θεσσαλονίκη")):
        
                 dispatcher.utter_message("keywords: {},{}".format( CoTh_type,CoTh_location))
                 sqltypevar="Συναυλία"
                 sqlcityvar="Θεσσαλονίκη"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( FeTh_type=="φεστιβάλ") and  FeTh_location=="Θεσσαλονίκη"):
+        elif  (( FeTh_type=="φεστιβάλ") and  (FeTh_location=="Θεσσαλονίκη" or FeTh_location=="θεσσαλονίκη")):
        
                 dispatcher.utter_message("keywords: {},{}".format( FeTh_type,FeTh_location))
                 sqltypevar="Φεστιβάλ"
@@ -309,42 +315,42 @@ class Action_SQL_Multiple_Query(Action):
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)   
 
         #patras
-        if (( SePa_type=="σεμινάρια" or SePa_type=="σεμινάριο") and SePa_location=="Πάτρα"):
+        if (( SePa_type=="σεμινάρια" or SePa_type=="σεμινάριο") and (SePa_location=="Πάτρα" or SePa_location=="πάτρα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( SePa_type,SePa_location))
                 sqltypevar="Σεμινάριο"
                 sqlcityvar="Πάτρα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( SpPa_type=="ομιλίες" or SpPa_type=="ομιλία") and SpPa_location=="Πάτρα"):
+        elif  (( SpPa_type=="ομιλίες" or SpPa_type=="ομιλία") and (SpPa_location=="Πάτρα" or SpPa_location=="πάτρα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( SpPa_type,SpPa_location))
                 sqltypevar="Ομιλία"
                 sqlcityvar="Πάτρα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
         
-        elif  (( ThPa_type=="θέατρο" or ThPa_type=="θεατρική παράσταση" or ThPa_type=="θεατρικές παραστάσεις") and ThPa_location=="Πάτρα"):
+        elif  (( ThPa_type=="θέατρο" or ThPa_type=="θεατρική παράσταση" or ThPa_type=="θεατρικές παραστάσεις") and (ThPa_location=="Πάτρα" or ThPa_location=="πάτρα")):
 
                 dispatcher.utter_message("keywords: {},{}".format( ThPa_type,ThPa_location))
                 sqltypevar="Θέατρο"
                 sqlcityvar="Πάτρα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( PaPa_type=="ζωγραφική" or PaPa_type=="έκθεση ζωγραφικής" or PaPa_type=="εκθέσεις ζωγραφικής") and  PaPa_location=="Πάτρα"):
+        elif  (( PaPa_type=="ζωγραφική" or PaPa_type=="έκθεση ζωγραφικής" or PaPa_type=="εκθέσεις ζωγραφικής") and  (PaPa_location=="Πάτρα" or PaPa_location=="πάτρα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( PaPa_type,PaPa_location))
-                sqltypevar="Έκθεση ζωγραφικής"
+                sqltypevar="Ζωγραφική"
                 sqlcityvar="Πάτρα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( CoPa_type=="συναυλίες" or CoPa_type=="συναυλία") and  CoPa_location=="Πάτρα"):
+        elif  (( CoPa_type=="συναυλίες" or CoPa_type=="συναυλία") and  (CoPa_location=="Πάτρα" or CoPa_location=="πάτρα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( CoPa_type,CoPa_location))
                 sqltypevar="Συναυλία"
                 sqlcityvar="Πάτρα"
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
 
-        elif  (( FePa_type=="φεστιβάλ") and  FePa_location=="Πάτρα"):
+        elif  (( FePa_type=="φεστιβάλ") and  (FePa_location=="Πάτρα" or FePa_location=="πάτρα")):
        
                 dispatcher.utter_message("keywords: {},{}".format( FePa_type,FePa_location))
                 sqltypevar="Φεστιβάλ"
@@ -352,7 +358,7 @@ class Action_SQL_Multiple_Query(Action):
                 sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)   
 
 
-        #SQL
+#SQL
 
 
         connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
@@ -401,6 +407,8 @@ class Action_All_Dates(Action):
         cursor=true
         sqlQuery="SELECT * FROM events"
 
+
+#SQL
         connection = mysql.connector.connect(host='mysql-ptuxiakh.alwaysdata.net', port='3306', database='ptuxiakh_events', user='ptuxiakh', password='1531998aA@', charset='utf8')
            
         try:
