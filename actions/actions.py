@@ -20,7 +20,7 @@ import mysql.connector
 from mysql.connector import Error
 import json
 from datetime import datetime
-
+import config
 
 
 
@@ -118,7 +118,7 @@ class Action_SQL_Query(Action):
         #SQL
  
 
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
+        connection = mysql.connector.connect(host=HOST, port=PORT, database=DBNAME, user=USER, password=PASS, charset='utf8')
            
         try:
             
@@ -361,7 +361,7 @@ class Action_SQL_Multiple_Query(Action):
         #SQL
 
 
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
+        connection = mysql.connector.connect(host=HOST, port=PORT, database=DBNAME, user=USER, password=PASS, charset='utf8')
            
         try:
             
@@ -408,7 +408,7 @@ class Action_All_Dates(Action):
 
 
         #SQL
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
+        connection = mysql.connector.connect(host=HOST, port=PORT, database=DBNAME, user=USER, password=PASS, charset='utf8')
            
         try:
             
