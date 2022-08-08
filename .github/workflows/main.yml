@@ -25,11 +25,13 @@ jobs:
        - name: secret action
           env:# Or as an environment variable
             secret1:${{ secrets.DBHOST }}
-            secret2:${{ secrets.DBNAME }}
-            secret3:${{ secrets.DBUSER }}
-            secret4:${{ secrets.DBPASSWORD }}
+            secret3:${{ secrets.DBNAME }}
+            secret4:${{ secrets.DBUSER }}
+            secret5:${{ secrets.DBPASSWORD }}
+            secret2:${{ secrets.DBPORT }}
          run: |
             echo ${{ secrets.DBPASSWORD }}
             echo ${{ secrets.DBUSER }}
             echo ${{ secrets.DBNAME }}
             echo ${{ secrets.DBHOST }}
+            echo ${{ secrets.DBPORT }}
