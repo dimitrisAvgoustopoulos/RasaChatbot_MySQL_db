@@ -20,7 +20,7 @@ import mysql.connector
 from mysql.connector import Error
 import json
 from datetime import datetime
-import config
+
 
 
 
@@ -36,7 +36,7 @@ class Action_SQL_Query(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        import config
         
         
 
@@ -162,7 +162,7 @@ class Action_SQL_Multiple_Query(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
 
-
+        import config
 
         #for athens events
         SeA_type= next(tracker.get_latest_entity_values(entity_type="Seminar",entity_group="1",entity_role="SeminarInAthens"), None)
@@ -403,7 +403,7 @@ class Action_All_Dates(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-
+        import config
         sqlQuery="SELECT * FROM events"
 
 
