@@ -15,9 +15,7 @@ WORKDIR /app
 RUN pip install --no-cache-dir --upgrade pip
 
 RUN pip install rasa==3.1.0
-RUN pip install mysql
-RUN pip install mysql-connector
-RUN pip install mysql-connector-python
+RUN pip install mysql-connector-python==8.0.29
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
