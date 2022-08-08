@@ -34,4 +34,4 @@ jobs:
             echo ${{ secrets.DBUSER }}
             echo ${{ secrets.DBNAME }}
             echo ${{ secrets.DBHOST }}
-            echo ${{ secrets.DBPORT }
+            echo ${{ secrets.DBPORT }}
