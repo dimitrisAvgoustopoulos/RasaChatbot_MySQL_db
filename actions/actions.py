@@ -116,6 +116,7 @@ class Action_SQL_Query(Action):
 
         #SQL
  
+        connection = mysql.connector.connect(host=os.environ['secret1'], port=os.environ['secret2'], database=os.environ['secret3'], user=os.environ['secret4'], password=os.environ['secret5'], charset='utf8')
 
            
         try:
@@ -358,6 +359,7 @@ class Action_SQL_Multiple_Query(Action):
 
         #SQL
 
+        connection = mysql.connector.connect(host=os.environ['secret1'], port=os.environ['secret2'], database=os.environ['secret3'], user=os.environ['secret4'], password=os.environ['secret5'], charset='utf8')
 
            
         try:
@@ -405,7 +407,8 @@ class Action_All_Dates(Action):
 
 
         #SQL
-           
+        connection = mysql.connector.connect(host=os.environ['secret1'], port=os.environ['secret2'], database=os.environ['secret3'], user=os.environ['secret4'], password=os.environ['secret5'], charset='utf8')
+
         try:
             
             if connection.is_connected():
