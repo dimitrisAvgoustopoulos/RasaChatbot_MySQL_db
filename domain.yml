@@ -1,0 +1,148 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - thanks
+  - bot_challenge
+  - ask_all_events
+  - ask_seminar_event
+  - ask_speech_event
+  - ask_painting_event
+  - ask_theatre_event
+  - ask_concert_event
+  - ask_festival_event
+  - ask_athens_event
+  - ask_thessaloniki_event
+  - ask_patras_event
+  - ask_type_and_location
+  - by_location
+  - by_type
+  - by_date
+  - nlu_fallback
+
+entities:
+  - Location
+  - Date
+  - Seminar
+  - Speech
+  - Painting
+  - Theatre 
+  - Concert
+  - Festival
+
+slots:
+  location:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Location
+  seminar:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Seminar
+  speech:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Speech
+  painting:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Painting
+  theatre:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Theatre
+  concert:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Concert
+  festival:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Festival
+
+
+responses:
+  utter_greet:
+  - text: "Γειά σου! Τι κάνεις;"
+
+  utter_introduction:
+  - text: " Το όνομά μου είναι Μήτση, σκοπός μου είναι να παρέχω υποστήριξη προς το κοινό και να προσφέρω ενημέρωση σχετικά με τις εκδηλώσεις που προάγουμε."
+
+  utter_happy:
+  - text: "Εξαιρετικά, χαίρομαι!"
+
+  utter_goodbye:
+  - text: "Αντίο"
+
+  utter_you_are_welcome:
+  - text: "Παρακαλώ!"
+
+  utter_iamabot:
+  - text: "Είμαι ένα bot το οποίο λειτουργεί με την τεχνολογία Rasa. Είμαι σχεδιασμένη απο φοιτητές του Πανεπιστημίου Αιγαίου!"
+
+  utter_can_i_help:
+  - text: "Πώς μπορω να σας βοηθήσω;"
+  - text: "Πώς μπορω να σας εξυπηρετήσω;"
+  - text: "Είμαι εδώ για να σε βοηθήσω! Τι ψάχνεις;"
+
+  utter_not_understanding:
+  - text: "Δέν μπορώ να καταλάβω τι εννοείς.. ή αυτο που ζητάς μάλλον δεν υπάρχει. Θες να ξαναδοκιμάσεις;"
+
+  utter_button_categories:
+  - text: "Παρακαλώ επέλεξε εκδήλωση με βάση τις κατηγορίες"
+    buttons:
+    - title: "Τοποθεσία"
+      payload: /by_location
+    - title: "Tύπος"
+      payload: /by_type
+    - title: "Ημερομηνία"
+      payload: /by_date
+
+ #buttons with slot value
+  utter_button_locationEvents:
+  - text: "Επέλεξε την επιθυμητή τοποθεσία"
+    buttons:
+    - title: "Αθήνα"
+      payload: '/ask_athens_event{{"Location":"Αθήνα"}}'
+    - title: "Θεσσαλονίκη"
+      payload: '/ask_thessaloniki_event{{"Location":"Θεσσαλονίκη"}}'
+    - title: "Πάτρα"
+      payload: '/ask_patras_event{{"Location":"Πάτρα"}}'
+
+
+  utter_button_typeEvents:
+  - text: "Επέλεξε τον τύπο εκδήλωσης που σε ενδιαφέρει"
+    buttons:
+    - title: "Σεμινάριο"
+      payload: '/ask_seminar_event{{"Seminar":"σεμινάριο"}}'
+    - title: "Ομιλία"
+      payload: '/ask_speech_event{{"Speech":"ομιλία"}}'
+    - title: "Ζωγραφική"
+      payload: '/ask_painting_event{{"Painting":"ζωγραφική"}}'
+    - title: "Θέατρο"
+      payload: '/ask_theatre_event{{"Theatre":"θέατρο"}}'
+    - title: "Συναυλία"
+      payload: '/ask_concert_event{{"Concert":"συναυλία"}}'
+    - title: "Φεστιβάλ"
+      payload: '/ask_festival_event{{"Festival":"φεστιβάλ"}}'
+
+actions:
+ - sql_query
+ - sql_multiple_query
+ - eventDates
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

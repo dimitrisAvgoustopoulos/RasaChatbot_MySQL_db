@@ -1,0 +1,985 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - γειά
+    - γειά σου
+    - γειά σας
+    - καλημέρα
+    - καλησπέρα
+    - καλημέρα σας
+    - καλησπέρα σας
+    - χαίρεται 
+    - την καλησπέρα μου
+  
+- intent: goodbye
+  examples: |
+    - τα λέμε
+    - τα λέμε μετά
+    - τα λέμε αργότερα
+    - αντίο
+    - αντίο σας
+    - καλή νύχτα 
+    - καλή νύχτα σας
+    - καλή σας νύχτα
+    - καλή σας μέρα
+    - εις το επανιδείν
+    - καλή συνέχεια
+
+- intent: affirm
+  examples: |
+    - ναι
+    - αμέ
+    - βεβαίως
+    - μάλιστα
+    - φυσικά
+    - σωστά
+    - οκ
+    - ok
+
+- intent: deny
+  examples: |
+    - όχι
+    - ποτέ
+    - με τίποτα
+    - δεν νομίζω
+    - δεν το νομίζω
+    - σε καμία περίπτωση
+    - καθόλου
+    - όχι ακριβώς
+    - αποκλείεται
+
+- intent: mood_great
+  examples: |
+    - τέλεια
+    - πολύ καλα
+    - εξαιρετικά
+    - εξαίρετα
+    - φανταστικά
+    - υπέροχα
+    - νιώθω πολύ καλά
+    - νιώθω τέλεια
+    - αισθάνομαι φανταστικά
+    - αισθάνομα εξαιρετικά
+    - μια χαρά
+    - πάρα πολύ καλά
+    - σούπερ
+    - εξαιρετικά καλά
+    - τόσο τέλεια
+    - είμαι μια χαρά
+    - είμαι πολύ καλά
+    - είμαι οκ
+    - καλά
+    - πολύ κομπλέ
+
+- intent: mood_unhappy
+  examples: |
+    - δεν είμαι καλά
+    - η μέρα μου ήταν χάλια
+    - είμαι πολύ λυπημένος
+    - δεν νιώθω τόσο καλά
+    - είμαι απογοητευμένος
+    - καθόλου καλά
+    - πολύ χάλια
+    - λυπημένος
+    - πολύ στεναχωρημένος
+    - είμαι πολύ στεναχωρημένος
+    - όχι καλά
+    - όχι και τόσο καλά
+    - όχι καλά
+    - νιώθω απογοήτευση
+    - δεν τα περνάω καλά
+    - έχω πρόβλημα
+    - έχω προβλήματα
+    - έχω να κάνω μια ερώτηση
+
+- intent: thanks
+  examples: |
+    - ευχαριστώ
+    - σας ευχαριστώ
+    - ευχαριστώ πολύ
+    - σας ευχαριστώ πάρα πολύ 
+    - σας ευχαριστώ ιδιαιτέρως
+    - ευχαριστώ για την βοήθεια
+    - ευχαριστώ για την βοήθειά σας
+    - είμαι ευγνόμων
+    - ευχαριστώ πολύ
+
+- intent: bot_challenge
+  examples: |
+    - τι είσαι;
+    - δεν είσαι άνθρωπος;
+    - είσαι μπότ;
+    - είσαι ρομπότ;
+    - είσαι μποτάκι;
+    - είσαι bot;
+    - μιλάω σε άνθρωπο?
+
+- intent: ask_all_events
+  examples: |
+    - θέλω πληροφορίες
+    - θέλω ενημέρωση
+    - ψάχνω για πληροφορίες
+    - δείξε μου όλα τα events
+    - δείξε μου όλα τα γεγονότα
+    - δείξε μου όλες τις εκδηλώσεις
+    - τι εκδηλώσεις υπάρχουν;
+    - τι events υπάρχουν;
+    - ποιές εκδηλώσεις μπορώ να βρώ;
+    - ποιά γεγονότα μπορώ να βρω;
+    - πές μου για τις εκδηλώσεις
+    - ποιές εκδηλώσεις έχετε;
+    - μπορείς να μου βρείς τι events υπάρχουν;
+    - μπορείς να μου βρείς τι εκδηλώσεις υπάρχουν;
+    - μπορείς να μου βρείς ποιά events είναι διαθέσιμα;
+    - μπορείς να μου βρείς ποιές εκδηλώσεις είναι διαθέσιμες;
+    - βρες μου events
+    - βρες μου εκδηλώσεις
+    - βρες μου γεγονότα
+    - ενημέρωσέ με για τα events
+    - ενημέρωσέ με για εκδηλώσεις
+    - ενημέρωσέ με για γεγονότα
+    - θέλω να μου βρείς εκδηλώσεις
+    - θέλω να μου βρείς events
+    - τι γνωρίζειςγια τις εκδηλώσεις;
+    - τι γνωρίζεις για τα events;
+    - θέλω ενημέρωση για εκδηλώσεις
+    - θέλω ενημέρωση για γεγονότα
+    - θέλω ενημέρωση για events
+    - θέλω να με ενημερώσεις για εκδηλώσεις
+    - θέλω να με ενημερώσεις για events
+    - ψάχνω για εκδηλώσεις 
+    - ψάχνω για events
+
+- intent: ask_seminar_event
+  examples: |
+    - [σεμινάριο](Seminar)
+    - [σεμινάρια](Seminar)
+    - υπάρχει [σεμινάριο](Seminar);
+    - θέλω να παρευρεθώ σε [σεμινάριο](Seminar)
+    - υπάρχουν [σεμινάρια](Seminar);
+    - υπάρχουν [σεμινάρια](Seminar) διαθέσιμα;
+    - πες μου για τα [σεμινάρια](Seminar)
+    - βρες μου [σεμινάρια](Seminar)
+    - τι [σεμινάρια](Seminar) υπάρχουν;
+    - ποιά [σεμινάρια](Seminar) είναι διαθέσιμα;
+    - ποιά [σεμινάρια](Seminar) μπορώ να βρώ;
+    - μπορώ να παρακολουθήσω [σεμινάρια](Seminar);
+    - θέλω πληροφορίες για [σεμινάρια](seminar)
+    - θέλω να βρείς πληροφορίες για [σεμινάρια](Seminar)
+    - θέλω ενημέρωση για [σεμινάρια](Seminar)
+    - θέλω να με ενημερώσεις για [σεμινάρια](Seminar)
+    - ψάχνω για [σεμινάρια](Seminar) 
+  
+- intent: ask_speech_event
+  examples: |
+    - [ομιλία](Speech)
+    - [ομιλίες](Speech)
+    - [Ομιλία](Speech)
+    - [Ομιλίες](Speech)
+    - υπάρχει [ομιλία](Speech);
+    - θέλω να παρευρεθώ σε [ομιλία](Speech)
+    - υπάρχουν [ομιλίες](Speech);
+    - υπάρχουν καθόλου [ομιλίες](Speech);
+    - τι ξέρεις για [ομιλίες](Speech);
+    - τι γνωρίζεις για τις [ομιλίες](Speech);
+    - τι [ομιλίες](Speech) υπάρχουν;
+    - ποιές [ομιλίες](Speech) μπορώ να βρώ
+    - μπορώ να ακούσω [ομιλίες](Speech);
+    - βρες μου [ομιλίες](Speech)
+    - βρες ομιλία
+    - τι πληροφορίες έχεις για [ομιλίες](Speech);
+    - θέλω πληροφορίες για [ομιλίες](Speech)
+    - θέλω πληροφορίες για [ομιλίες](Speech)
+    - θέλω να βρείς πληροφορίες για [ομιλίες](Speech)
+    - θέλω ενημέρωση για [ομιλίες](Speech)
+    - θέλω να με ενημερώσεις για [ομιλίες](Speech)
+    - ψάχνω για [ομιλίες](Speech)
+    - ψάχνω για [ομιλία](Speech)
+
+- intent: ask_theatre_event
+  examples: |
+    - [θεατρική παράσταση](Theatre)
+    - [θεατρικές παραστάσεις](Theatre)
+    - [Θεατρική παράσταση](Theatre)
+    - [Θεατρικές παραστάσεις](Theatre)
+    - [θέατρο](Theatre)
+    - [Θέατρο](Theatre
+    - υπάρχει [θεατρική παράσταση](Theatre);
+    - θέλω να παρευρεθώ σε [θεατρική παράσταση](Theatre)
+    - υπάρχουν [θεατρικές παραστάσεις](Theatre);
+    - υπάρχει [θεατρική παράσταση](Theatre);
+    - υπάρχουν καθόλου [θεατρικές παραστάσεις](Theatre);
+    - τι ξέρεις για [θεατρικές παραστάσεις](Theatre);
+    - τι γνωρίζεις για τις [θεατρικές παραστάσεις](Theatre)
+    - τι [θεατρικές παραστάσεις](Theatre) υπάρχουν
+    - ποιές [θεατρικές παραστάσεις](Theatre) μπορώ να βρώ
+    - μπορώ να παρακολουθήσω [θεατρικές παραστάσεις](Theatre);
+    - βρές μου [θεατρικές παραστάσεις](Theatre)
+    - τι πληροφορίες έχεις για [θεατρικές παραστάσεις](Theatre);
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις](Theatre)
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις](Theatre)
+    - θέλω να βρείς πληροφορίες για [θεατρικές παραστάσεις](Theatre)
+    - θέλω πληροφορίες για [θέατρο](Theatre) 
+    - μπορω να βρώ [θέατρο](Theatre);
+    - θέλω ενημέρωση για [θέατρο](Theatre)
+    - θέλω ενημέρωση για [θεατρικές παραστάσεις](Theatre)
+    - θέλω να με ενημερώσεις για [θέατρο](Theatre)
+    - θέλω να με ενημερώσεις για [θεατρικές παραστάσεις](Theatre)
+    - ψάχνω για [θέατρο](Theatre)
+    - ψάψνω για [θεατρική παράσταση](Theatre)
+    - ψάχνω για [θεατρικές παραστάσεις](Theatre)
+
+- intent: ask_painting_event
+  examples: |
+    - [έκθεση ζωγραφικής](Painting)
+    - [εκθέσεις ζωγραφικής](Painting)
+    - [ζωγραφική](Painting)
+    - [Έκθεση ζωγραφικής](Painting)
+    - [Εκθέσεις ζωγραφικής](Painting)
+    - [Ζωγραφική](Painting)
+    - υπάρχει [έκθεση ζωγραφικής](Painting);
+    - θέλω να παρευρεθώ σε [έκθεση ζωγραφικής](Painting)
+    - υπάρχουν [εκθέσεις ζωγραφικής](Painting);
+    - υπάρχει [έκθεση ζωγραφικής](Painting);
+    - υπάρχουν καθόλου [εκθέσεις ζωγραφικής](Painting);
+    - τι ξέρεις για [εκθέσεις ζωγραφικής](Painting);
+    - τι γνωρίζεις για τις [εκθέσεις ζωγραφικής](Painting)
+    - τι [εκθέσεις ζωγραφικής](Painting) υπάρχουν
+    - ποιές [εκθέσεις ζωγραφικής](Painting) μπορώ να βρώ
+    - μπορώ να παρακολουθήσω [εκθέσεις ζωγραφικής](Painting);
+    - βρες μου [εκθέσεις ζωγραφικής](Painting)
+    - τι πληροφορίες έχεις για [εκθέσεις ζωγραφικής](Painting);
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής](Painting)
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής](Painting)
+    - θέλω να βρείς πληροφορίες για [εκθέσεις ζωγραφικής](Painting)
+    - θέλω πληροφορίες για [ζωγραφική](Painting) 
+    - μπορω να βρώ [ζωγραφική](Painting);
+    - θέλω ενημέρωση για [ζωγραφική](Painting)
+    - θέλω ενημέρωση για [εκθέσεις ζωγραφικής](Painting)
+    - θέλω να με ενημερώσεις για [ζωγραφική](Painting)
+    - θέλω να με ενημερώσεις για [εκθέσεις ζωγραφικής](Painting)
+    - ψάχνω για [ζωγραφική](Painting) 
+    - θέλω [έκθεση ζωγραφικής](Painting)
+    - ψάχνω για [εκθέσεις ζωγραφικής](Painting)
+
+- intent: ask_concert_event
+  examples: |
+    - [συναυλία](Concert)
+    - [συναυλίες](Concert)
+    - [Συναυλία](Concert)
+    - [Συναυλίες](Concert)
+    - υπάρχει [συναυλία](Concert);
+    - θέλω να παρευρεθώ σε [συναυλία](Concert)
+    - υπάρχουν [συναυλίες](Concert);
+    - υπάρχει [συναυλία](Concert);
+    - υπάρχουν καθόλου [συναυλίες](Concert);
+    - τι ξέρεις για [συναυλίες](Concert);
+    - τι γνωρίζεις για τις [συναυλίες](Concert)
+    - τι [συναυλίες](Concert) υπάρχουν
+    - ποιές [συναυλίες](Concert) μπορώ να βρώ
+    - μπορώ να παρακολουθήσω [συναυλίες](Concert);
+    - βρες μου [συναυλίες](Concert)
+    - τι πληροφορίες έχεις για [συναυλίες](Concert);
+    - θέλω πληροφορίες για [συναυλίες](Concert)
+    - θέλω πληροφορίες για [συναυλίες](Concert)
+    - θέλω να βρείς πληροφορίες για [συναυλίες](Concert)
+    - θέλω πληροφορίες για [συναυλία](Concert) 
+    - μπορω να βρώ [συναυλία](Concert);
+    - θέλω ενημέρωση για [συναυλία](Concert)
+    - θέλω ενημέρωση για [συναυλίες](Concert)
+    - θέλω να με ενημερώσεις για [συναυλία](Concert)
+    - θέλω να με ενημερώσεις για [συναυλίες](Concert)
+    - ψάχνω για [συναυλία](Concert) 
+    - θέλω [συναυλία](Concert)
+    - ψάχνω για [συναυλίες](Concert)
+
+- intent: ask_festival_event
+  examples: |
+    - [φεστιβάλ](Festival)
+    - [Φεστιβάλ](Festival)
+    - υπάρχει [φεστιβάλ](Festival);
+    - θέλω να παρευρεθώ σε [φεστιβάλ](Festival)
+    - υπάρχουν [φεστιβάλ](Festival);
+    - υπάρχει [φεστιβάλ](Festival);
+    - υπάρχουν καθόλου [φεστιβάλ](Festival);
+    - τι ξέρεις για [φεστιβάλ](Festival);
+    - τι γνωρίζεις για τις [φεστιβάλ](Festival)
+    - τι [φεστιβάλ](Festival) υπάρχουν
+    - ποιές [φεστιβάλ](Festival) μπορώ να βρώ
+    - μπορώ να παρακολουθήσω [φεστιβάλ](Festival);
+    - βρες μου [φεστιβάλ](Festival)
+    - τι πληροφορίες έχεις για [φεστιβάλ](Festival);
+    - θέλω πληροφορίες για [φεστιβάλ](Festival)
+    - θέλω πληροφορίες για [φεστιβάλ](Festival)
+    - θέλω να βρείς πληροφορίες για [φεστιβάλ](Festival)
+    - θέλω πληροφορίες για [φεστιβάλ](Festival)
+    - μπορω να βρώ [φεστιβάλ](Festival);
+    - θέλω ενημέρωση για [φεστιβάλ](Festival)
+    - θέλω ενημέρωση για [φεστιβάλ](Festival)
+    - θέλω να με ενημερώσεις για [φεστιβάλ](Festival)
+    - θέλω να με ενημερώσεις για [φεστιβάλ](Festival)
+    - ψάχνω για [φεστιβάλ](Festival)
+    - θέλω [φεστιβάλ](Festival)
+    - ψάχνω για [φεστιβάλ](Festival)
+
+- intent: ask_athens_event
+  examples: |
+    - [αθήνα](Location)
+    - [Αθήνα](Location)
+    - υπάρχουν εκδηλώσεις στην [αθήνα](Location);
+    - υπάρχουν εκδηλώσεις στην [Αθήνα](Location);
+    - υπάρχουν γεγονότα στην [Αθήνα](Location);
+    - υπάρχουν events στην [Αθήνα](Location);
+    - υπάρχουν καθόλου εκδηλώσεις στην [Αθήνα](Location);
+    - υπάρχουν καθόλου events στην [Αθήνα](Location);
+    - τι υπάρχει στην [Αθήνα](Location) απο εκδηλώσεις;
+    - τι υπάρχει στην [Αθήνα](Location);
+    - ποιά γεγονότα υπάρχουν στην [Αθήνα](Location);
+    - μπορώ να πάω σε events στην [Αθήνα](Location);
+    - μπορώ να πάω σε εκδηλώσεις στην [Αθήνα](Location);
+    - βρές μου εκδηλώσεις στην [Αθήνα](Location)
+    - τι πληροφορίες έχεις για εκδηλώσεις στην [Αθήνα](Location);
+    - θέλω γεγονότα στην [Αθήνα](Location)
+    - θέλω εκδηλώσεις στην [Αθήνα](Location)
+    - θέλω εκδηλώσεις που γίνονται στην [Αθήνα](Location)
+    - θέλω να βρείς πληροφορίες για εκδηλώσεις στην [Αθήνα](Location)
+    - θέλω πληροφορίες για εκδηλώσεις στην [Αθήνα](Location)
+    - μπορω να βρώ εκδηλώσεις στην [Αθήνα](Location);
+    - μπορω να βρώ events στην [Αθήνα](Location);
+    - θέλω ενημέρωση για εκδηλώσεις στην [Αθήνα](Location)
+    - ψάχνω για εκδηλώσεις στην [Αθήνα](Location) 
+    - ψάχνω για events στην [Αθήνα](Location) 
+    - ψάχνω για γεγονότα στην [Αθήνα](Location) 
+  
+
+- intent: ask_thessaloniki_event
+  examples: |
+    - [θεσσαλονίκη](Location)
+    - [Θεσσαλονίκη](Location)
+    - υπάρχουν εκδηλώσεις στην [θεσσαλονίκη](Location);
+    - υπάρχουν εκδηλώσεις στην [Θεσσαλονίκη](Location);
+    - υπάρχουν γεγονότα στην [Θεσσαλονίκη](Location);
+    - υπάρχουν events στην [Θεσσαλονίκη](Location);
+    - υπάρχουν καθόλου εκδηλώσεις στην [Θεσσαλονίκη](Location);
+    - υπάρχουν καθόλου events στην [Θεσσαλονίκη](Location);
+    - τι υπάρχει στην [Θεσσαλονίκη](Location) απο εκδηλώσεις;
+    - τι υπάρχει στην [Θεσσαλονίκη(Location);
+    - ποιά γεγονότα υπάρχουν στην [Θεσσαλονίκη](Location);
+    - μπορώ να πάω σε events στην [Θεσσαλονίκη](Location);
+    - μπορώ να πάω σε εκδηλώσεις στην [Θεσσαλονίκη](Location);
+    - βρές μου εκδηλώσεις στην [Θεσσαλονίκη](Location)
+    - τι πληροφορίες έχεις για εκδηλώσεις στην [Θεσσαλονίκη](Location);
+    - θέλω εκδηλώσεις στην [Θεσσαλονίκη](Location)
+    - θέλω εκδηλώσεις που γίνονται στην [Θεσσαλονίκη](Location)
+    - θέλω να βρείς πληροφορίες για εκδηλώσεις στην [Θεσσαλονίκη](Location)
+    - θέλω πληροφορίες για εκδηλώσεις στην [Θεσσαλονίκη](Location)
+    - μπορω να βρώ εκδηλώσεις στην [Θεσσαλονίκη](Location);
+    - μπορω να βρώ events στην [Θεσσαλονίκη](Location);
+    - θέλω ενημέρωση για εκδηλώσεις στην [Θεσσαλονίκη](Location)
+    - ψάχνω για εκδηλώσεις στην [Θεσσαλονίκη](Location) 
+    - ψάχνω για events στην [Θεσσαλονίκη](Location) 
+    - ψάχνω για γεγονότα στην [Θεσσαλονίκη](Location) 
+    
+- intent: ask_patras_event
+  examples: |
+    - [Πάτρα](Location)
+    - [πάτρα](Location)
+    - υπάρχουν εκδηλώσεις στην [Πάτρα](Location);
+    - υπάρχουν εκδηλώσεις στην [Πάτρα](Location);
+    - υπάρχουν γεγονότα στην [Πάτρα](Location);
+    - υπάρχουν events στην [Πάτρα](Location);
+    - υπάρχουν καθόλου εκδηλώσεις στην [Πάτρα](Location);
+    - υπάρχουν καθόλου events στην [Πάτρα](Location);
+    - τι υπάρχει στην [Πάτρα](Location) απο εκδηλώσεις;
+    - τι υπάρχει στην [Πάτρα](Location);
+    - ποιά γεγονότα υπάρχουν στην [Πάτρα](Location);
+    - μπορώ να πάω σε events στην [Πάτρα](Location);
+    - μπορώ να πάω σε εκδηλώσεις στην [Πάτρα](Location);
+    - βρές μου εκδηλώσεις στην [Πάτρα](Location)
+    - τι πληροφορίες έχεις για εκδηλώσεις στην [Πάτρα](Location);
+    - θέλω εκδηλώσεις στην [Πάτρα](Location)
+    - θέλω εκδηλώσεις που γίνονται στην [Πάτρα](Location)
+    - θέλω να βρείς πληροφορίες για εκδηλώσεις στην [Πάτρα](Location)
+    - θέλω πληροφορίες για εκδηλώσεις στην [Πάτρα](Location)
+    - μπορω να βρώ εκδηλώσεις στην [Πάτρα](Location);
+    - μπορω να βρώ events στην [Πάτρα](Location);
+    - θέλω ενημέρωση για εκδηλώσεις στην [Πάτρα](Location)
+    - ψάχνω για εκδηλώσεις στην [Πάτρα](Location) 
+    - ψάχνω για events στην [Πάτρα](Location) 
+    - ψάχνω για γεγονότα στην [Πάτρα](Location) 
+
+- intent: ask_type_and_location
+  examples: |
+    - [σεμινάριο]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - [Σεμινάριο]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - [Σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} [αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - [σεμινάριο]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} [αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - βρες [σεμινάριο]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - βρες [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - τι [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} μπορώ να βρω στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - θέλω να παρευρεθώ σε [σεμινάριο]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} 
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} διαθέσιμα στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - πες μου για τα [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - τι [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} υπάρχουν στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - ποιά [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} είναι διαθέσιμα στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - ποιά [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} μπορώ να βρώ στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - μπορώ να παρακολουθήσω [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - θέλω πληροφορίες για [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - θέλω να βρείς πληροφορίες για [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"} ;
+    - θέλω ενημέρωση για [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - θέλω να με ενημερώσεις για [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    - ψάχνω για [σεμινάρια]{"entity":"Seminar","role":"SeminarInAthens","group":"1"} στην [Αθήνα]{"entity":"Location","role":"SeminarInAthens","group":"1"}
+    
+    - [ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} [αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - [ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - [Ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} [αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - [Ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} [αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - [Ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - υπάρχει [ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"} ;
+    - θέλω να παρευρεθώ σε [ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - υπάρχουν [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"} ;
+    - υπάρχουν καθόλου [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"} ;
+    - τι ξέρεις για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"} ;
+    - τι γνωρίζεις για τις [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"} ;
+    - τι [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} υπάρχουν στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"} ;
+    - ποιές [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} μπορώ να βρώ στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - μπορώ να ακούσω [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - βρες μου [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - βρες [ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - τι πληροφορίες έχεις για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - θέλω πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - θέλω πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - θέλω να βρείς πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - θέλω ενημέρωση για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - θέλω να με ενημερώσεις για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - ψάχνω για [ομιλίες]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+    - ψάχνω για [ομιλία]{"entity":"Speech","role":"SpeechInAthens","group":"2"} στην [Αθήνα]{"entity":"Location","role":"SpeechInAthens","group":"2"}
+   
+    - [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} [αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - [Θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - [Θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} [αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - [θέατρο]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - [Θέατρο]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} [αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - υπάρχει [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - θέλω να παρευρεθώ σε [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - υπάρχουν [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - υπάρχει [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - υπάρχουν καθόλου [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - τι ξέρεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - τι γνωρίζεις για τις [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - τι [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} υπάρχουν στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - ποιές [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} μπορώ να βρώ στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - μπορώ να παρακολουθήσω [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - βρές μου [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - τι πληροφορίες έχεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - θέλω να βρείς πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - θέλω πληροφορίες για [θέατρο]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - μπορω να βρώ [θέατρο]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"} ;
+    - θέλω ενημέρωση για [θέατρο]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - θέλω ενημέρωση για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - θέλω να με ενημερώσεις για [θέατρο]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - θέλω να με ενημερώσεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - ψάχνω για [θέατρο]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - ψάψνω για [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    - ψάχνω για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInAthens","group":"3"} στην [Αθήνα]{"entity":"Location","role":"TheatreInAthens","group":"3"}
+    
+    - [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [Ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - [Ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - υπάρχει [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - θέλω να παρευρεθώ σε [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - υπάρχουν [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - υπάρχει [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - υπάρχουν καθόλου [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - τι ξέρεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - τι γνωρίζεις για τις [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - τι [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} υπάρχουν στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - ποιές [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} μπορώ να βρώ στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - μπορώ να παρακολουθήσω [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - βρες μου [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - τι πληροφορίες έχεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - θέλω να βρείς πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - θέλω πληροφορίες για [ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - μπορω να βρώ [ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"} ;
+    - θέλω ενημέρωση για [ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - θέλω ενημέρωση για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - θέλω να με ενημερώσεις για [ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - θέλω να με ενημερώσεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - ψάχνω για [ζωγραφική]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - θέλω [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    - ψάχνω για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInAthens","group":"4"} στην [Αθήνα]{"entity":"Location","role":"PaintingInAthens","group":"4"}
+    
+    - [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - [Συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} [αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - [Συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - [Συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} [αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - [Συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - υπάρχει [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - θέλω να παρευρεθώ σε [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - υπάρχουν [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - υπάρχει [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - υπάρχουν καθόλου [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - τι ξέρεις για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - τι γνωρίζεις για τις [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - τι [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} υπάρχουν στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - ποιές [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} μπορώ να βρώ στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - μπορώ να παρακολουθήσω [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - βρες μου [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - τι πληροφορίες έχεις για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - θέλω να βρείς πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - θέλω πληροφορίες για [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - μπορω να βρώ [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"} ;
+    - θέλω ενημέρωση για [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - θέλω ενημέρωση για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - θέλω να με ενημερώσεις για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - θέλω να με ενημερώσεις για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - ψάχνω για [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - θέλω [συναυλία]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    - ψάχνω για [συναυλίες]{"entity":"Concert","role":"ConcertInAthens","group":"5"} στην [Αθήνα]{"entity":"Location","role":"ConcertInAthens","group":"5"}
+    
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} [αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - [Φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} [αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - υπάρχει [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - θέλω να παρευρεθώ σε [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - υπάρχουν [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - υπάρχει [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - υπάρχουν καθόλου [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - τι ξέρεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - τι γνωρίζεις για τις [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - τι [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} υπάρχουν στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - ποιές [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} μπορώ να βρώ στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - μπορώ να παρακολουθήσω [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - βρες μου [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - τι πληροφορίες έχεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - θέλω να βρείς πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - μπορω να βρώ [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"} ;
+    - θέλω ενημέρωση για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - θέλω ενημέρωση για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - θέλω να με ενημερώσεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - θέλω να με ενημερώσεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - ψάχνω για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - θέλω [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    - ψάχνω για [φεστιβάλ]{"entity":"Festival","role":"FestivalInAthens","group":"6"} στην [Αθήνα]{"entity":"Location","role":"FestivalInAthens","group":"6"}
+    
+    - [σεμινάριο]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - [Σεμινάριο]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - [Σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} [θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - [σεμινάριο]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} [θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - βρες [σεμινάριο]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - βρες [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - τι [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} μπορώ να βρω στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - θέλω να παρευρεθώ σε [σεμινάριο]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} 
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} διαθέσιμα στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - πες μου για τα [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - τι [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} υπάρχουν στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - ποιά [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} είναι διαθέσιμα στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - ποιά [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} μπορώ να βρώ στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - μπορώ να παρακολουθήσω [σεμινάρια](Seminar) {"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - θέλω πληροφορίες για [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - θέλω να βρείς πληροφορίες για [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"} ;
+    - θέλω ενημέρωση για [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - θέλω να με ενημερώσεις για [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+    - ψάχνω για [σεμινάρια]{"entity":"Seminar","role":"SeminarInThessaloniki","group":"7"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SeminarInThessaloniki","group":"7"}
+
+    - [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - [Ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - [Ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - [Ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - υπάρχει [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - θέλω να παρευρεθώ σε [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - υπάρχουν [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - υπάρχουν καθόλου [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - τι ξέρεις για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - τι γνωρίζεις για τις [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - τι [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} υπάρχουν στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - ποιές [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} μπορώ να βρώ στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - μπορώ να ακούσω [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - βρες μου [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - βρες [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - τι πληροφορίες έχεις για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"} ;
+    - θέλω πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - θέλω πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - θέλω να βρείς πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - θέλω ενημέρωση για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - θέλω να με ενημερώσεις για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - ψάχνω για [ομιλίες]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+    - ψάχνω για [ομιλία]{"entity":"Speech","role":"SpeechInThessaloniki","group":"8"} στην [Θεσσαλονίκη]{"entity":"Location","role":"SpeechInThessaloniki","group":"8"}
+
+    - [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} [θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - [Θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - [Θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} [θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - [θέατρο]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - [Θέατρο]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} [θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - υπάρχει [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - θέλω να παρευρεθώ σε [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - υπάρχουν [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - υπάρχει [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - υπάρχουν καθόλου [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - τι ξέρεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - τι γνωρίζεις για τις [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - τι [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} υπάρχουν στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - ποιές [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} μπορώ να βρώ στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - μπορώ να παρακολουθήσω [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - βρές μου [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - τι πληροφορίες έχεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - θέλω να βρείς πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - θέλω πληροφορίες για [θέατρο]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - μπορω να βρώ [θέατρο]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"} ;
+    - θέλω ενημέρωση για [θέατρο]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - θέλω ενημέρωση για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - θέλω να με ενημερώσεις για [θέατρο]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - θέλω να με ενημερώσεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - ψάχνω για [θέατρο]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - ψάψνω για [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    - ψάχνω για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInThessaloniki","group":"9"} στην [Θεσσαλονίκη]{"entity":"Location","role":"TheatreInThessaloniki","group":"9"}
+    
+    - [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [Ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - [Ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - υπάρχει [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - θέλω να παρευρεθώ σε [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - υπάρχουν [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - υπάρχει [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - υπάρχουν καθόλου [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - τι ξέρεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - τι γνωρίζεις για τις [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - τι [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} υπάρχουν στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - ποιές [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} μπορώ να βρώ στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - μπορώ να παρακολουθήσω [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - βρες μου [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - τι πληροφορίες έχεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - θέλω να βρείς πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - θέλω πληροφορίες για [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - μπορω να βρώ [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"} ;
+    - θέλω ενημέρωση για [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - θέλω ενημέρωση για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - θέλω να με ενημερώσεις για [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - θέλω να με ενημερώσεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - ψάχνω για [ζωγραφική]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - θέλω [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    - ψάχνω για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInThessaloniki","group":"10"} στην [Θεσσαλονίκη]{"entity":"Location","role":"PaintingInThessaloniki","group":"10"}
+    
+    - [συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - [Συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - [Συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - [Συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - [Συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - υπάρχει [συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - θέλω να παρευρεθώ σε [συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - υπάρχουν [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - υπάρχει [συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - υπάρχουν καθόλου [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - τι ξέρεις για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - τι γνωρίζεις για τις [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - τι [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} υπάρχουν στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - ποιές [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} μπορώ να βρώ στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - μπορώ να παρακολουθήσω [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - βρες μου [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - τι πληροφορίες έχεις για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - θέλω να βρείς πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - μπορω να βρώ [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"} ;
+    - θέλω ενημέρωση για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - θέλω ενημέρωση για [συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - θέλω να με ενημερώσεις για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - θέλω να με ενημερώσεις για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - ψάχνω για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - θέλω [συναυλία]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    - ψάχνω για [συναυλίες]{"entity":"Concert","role":"ConcertInThessaloniki","group":"11"} στην [Θεσσαλονίκη]{"entity":"Location","role":"ConcertInThessaloniki","group":"11"}
+    
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} [θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - [Φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} [θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - υπάρχει [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - θέλω να παρευρεθώ σε [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - υπάρχουν [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - υπάρχει [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - υπάρχουν καθόλου [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - τι ξέρεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - τι γνωρίζεις για τις [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - τι [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} υπάρχουν στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - ποιές [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} μπορώ να βρώ στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - μπορώ να παρακολουθήσω [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - βρες μου [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - τι πληροφορίες έχεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - θέλω να βρείς πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - μπορω να βρώ [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"} ;
+    - θέλω ενημέρωση για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - θέλω ενημέρωση για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - θέλω να με ενημερώσεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - θέλω να με ενημερώσεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - ψάχνω για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - θέλω [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    - ψάχνω για [φεστιβάλ]{"entity":"Festival","role":"FestivalInThessaloniki","group":"12"} στην [Θεσσαλονίκη]{"entity":"Location","role":"FestivalInThessaloniki","group":"12"}
+    
+    - [σεμινάριο]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - [Σεμινάριο]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - [Σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} [πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - [σεμινάριο]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} [πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - βρες [σεμινάριο]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - βρες [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - τι [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} μπορώ να βρω στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - θέλω να παρευρεθώ σε [σεμινάριο]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} 
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - υπάρχουν [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} διαθέσιμα στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - πες μου για τα [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - τι [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} υπάρχουν στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - ποιά [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} είναι διαθέσιμα στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - ποιά [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} μπορώ να βρώ στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - μπορώ να παρακολουθήσω [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - θέλω πληροφορίες για [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - θέλω να βρείς πληροφορίες για [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"} ;
+    - θέλω ενημέρωση για [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - θέλω να με ενημερώσεις για [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    - ψάχνω για [σεμινάρια]{"entity":"Seminar","role":"SeminarInPatras","group":"13"} στην [Πάτρα]{"entity":"Location","role":"SeminarInPatras","group":"13"}
+    
+    - [ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} [πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - [ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - [Ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} [πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - [Ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} [πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - [Ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - υπάρχει [ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - θέλω να παρευρεθώ σε [ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - υπάρχουν [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - υπάρχουν καθόλου [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - τι ξέρεις για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - τι γνωρίζεις για τις [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - τι [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} υπάρχουν στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - ποιές [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} μπορώ να βρώ στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - μπορώ να ακούσω [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - βρες μου [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - βρες [ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - τι πληροφορίες έχεις για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"} ;
+    - θέλω πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - θέλω πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - θέλω να βρείς πληροφορίες για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - θέλω ενημέρωση για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - θέλω να με ενημερώσεις για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - ψάχνω για [ομιλίες]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    - ψάχνω για [ομιλία]{"entity":"Speech","role":"SpeechInPatras","group":"14"} στην [Πάτρα]{"entity":"Location","role":"SpeechInPatras","group":"14"}
+    
+    - [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} [πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - [Θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - [Θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} [πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - [θέατρο]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - [Θέατρο]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} [πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - υπάρχει [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - θέλω να παρευρεθώ σε [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - υπάρχουν [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - υπάρχει [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - υπάρχουν καθόλου [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - τι ξέρεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - τι γνωρίζεις για τις [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - τι [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} υπάρχουν στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - ποιές [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} μπορώ να βρώ στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - μπορώ να παρακολουθήσω [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - βρές μου [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - τι πληροφορίες έχεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - θέλω πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - θέλω να βρείς πληροφορίες για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - θέλω πληροφορίες για [θέατρο]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - μπορω να βρώ [θέατρο]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"} ;
+    - θέλω ενημέρωση για [θέατρο]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - θέλω ενημέρωση για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - θέλω να με ενημερώσεις για [θέατρο]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - θέλω να με ενημερώσεις για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - ψάχνω για [θέατρο]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - ψάψνω για [θεατρική παράσταση]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    - ψάχνω για [θεατρικές παραστάσεις]{"entity":"Theatre","role":"TheatreInPatras","group":"15"} στην [Πάτρα]{"entity":"Location","role":"TheatreInPatras","group":"15"}
+    
+    - [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [Έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [Εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [Ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - [Ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} [πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - υπάρχει [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - θέλω να παρευρεθώ σε [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - υπάρχουν [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - υπάρχει [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - υπάρχουν καθόλου [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - τι ξέρεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - τι γνωρίζεις για τις [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - τι [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} υπάρχουν στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - ποιές [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} μπορώ να βρώ στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - μπορώ να παρακολουθήσω [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - βρες μου [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - τι πληροφορίες έχεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - θέλω πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - θέλω να βρείς πληροφορίες για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - θέλω πληροφορίες για [ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - μπορω να βρώ [ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"} ;
+    - θέλω ενημέρωση για [ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - θέλω ενημέρωση για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - θέλω να με ενημερώσεις για [ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - θέλω να με ενημερώσεις για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - ψάχνω για [ζωγραφική]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - θέλω [έκθεση ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    - ψάχνω για [εκθέσεις ζωγραφικής]{"entity":"Painting","role":"PaintingInPatras","group":"16"} στην [Πάτρα]{"entity":"Location","role":"PaintingInPatras","group":"16"}
+    
+    - [συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - [Συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} [πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - [Συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - [Συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} [πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - [Συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - υπάρχει [συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - θέλω να παρευρεθώ σε [συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - υπάρχουν [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - υπάρχει [συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - υπάρχουν καθόλου [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - τι ξέρεις για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - τι γνωρίζεις για τις [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - τι [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} υπάρχουν στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - ποιές [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} μπορώ να βρώ στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - μπορώ να παρακολουθήσω [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - βρες μου [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - τι πληροφορίες έχεις για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - θέλω να βρείς πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - θέλω πληροφορίες για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - μπορω να βρώ [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"} ;
+    - θέλω ενημέρωση για [συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - θέλω ενημέρωση για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - θέλω να με ενημερώσεις για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - θέλω να με ενημερώσεις για [συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - ψάχνω για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - θέλω [συναυλία]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    - ψάχνω για [συναυλίες]{"entity":"Concert","role":"ConcertInPatras","group":"17"} στην [Πάτρα]{"entity":"Location","role":"ConcertInPatras","group":"17"}
+    
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} [πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - [Φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} [πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - υπάρχει [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - θέλω να παρευρεθώ σε [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - υπάρχουν [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - υπάρχει [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - υπάρχουν καθόλου [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - τι ξέρεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - τι γνωρίζεις για τις [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - τι [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} υπάρχουν στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - ποιές [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} μπορώ να βρώ στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - μπορώ να παρακολουθήσω [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - βρες μου [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - τι πληροφορίες έχεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - θέλω να βρείς πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - θέλω πληροφορίες για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - μπορω να βρώ [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"} ;
+    - θέλω ενημέρωση για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - θέλω ενημέρωση για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - θέλω να με ενημερώσεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - θέλω να με ενημερώσεις για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - ψάχνω για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - θέλω [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+    - ψάχνω για [φεστιβάλ]{"entity":"Festival","role":"FestivalInPatras","group":"18"} στην [Πάτρα]{"entity":"Location","role":"FestivalInPatras","group":"18"}
+
+
+- intent: by_location
+  examples: |
+    - βρες μου εκδηλώσεις ανά τοποθεσία
+    - βρες μου γεγονότα βάση τοποθεσίας
+    - βρες μου events ανά τοποθεσία
+    - πού μπορώ να βρώ εκδηλώσεις;
+    - σε ποιές τοποθεσίες έχει εκδηλώσεις;
+    - σε ποιές τοποθεσίες έχει γεγονότα;
+    - σε ποιά μέρη υπάρχουν events;
+    - πού μπορώ να βρώ events
+    - πού μπορώ να βρω γεγονότα
+    - ποιές τοποθεσίες έχουν εκδηλώσεις
+    - ποιές τοποθεσίες έχουν events 
+    - ψάχνω για τοποθεσίες που έχουν εκδηλώσεις
+    - ψάχνω για τοποθεσίες που έχουν events
+
+- intent: by_type
+  examples: |
+    - βρες μου εκδηλώσεις ανά τύπο
+    - βρες μου events ανά τύπο
+    - βρες μου γεγονότα βάση τύπου
+    - υπάρχουν τύποι εκδηλώσεων;
+    - ποιοί τύποι εκδηλώσεων υπάρχουν;
+    - ποιοί τύποι γεγονότων είναι διαθέσιμοι;
+    - τι είδους events υπάρχουν;
+    - τι είδους γεγονότων υπάρχουν
+    - τι είδους εκδηλώσεις υπάρχουν;
+    - ποιοί είναι οι τύποι των εκδηλώσεων;
+  
+- intent: by_date
+  examples: |
+    - βρες μου εκδηλώσεις ανά ημερομηνία
+    - βρες μου events ανά ημερομηνία
+    - υπάρχουν ημερομηνίες με εκδηλώσεις;
+    - ποιές ημερομηνίες με εκδηλώσεις υπάρχουν;
+    - ποιές ημερομηνίες με events υπάρχουν;
+    - τι ημερομηνίες με εκδηλώσεις υπάρχουν;
+    - ποιές είναι οι ημερομηνίες των εκδηλώσεων;
+
