@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+
+    </div>
+    <head>
+      
+    </head>
+    <script>!(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+        // Replace 1.x.x with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              initPayload:'/greet',
+              customData: { language: "en" },
+              socketUrl: "http://localhost:5005",
+              title: "Event-Bot",
+              subtitle:"Ask me anything about our events",
+              showFullScreenButton: true,
+              showMessageDate: true,
+              profileAvatar: "./icons/robot.svg",
+              openLauncherImage: "./icons/comments.svg",
+              closeImage: "./icons/times-circle.svg",
+              params: {
+                storage: "session"
+              }
+              
+              // add other props here
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+        
+    })();
+    </script>
+    <style>
+      .rw-conversation-container
+      .rw-header {background-color: rgb(21, 37, 107);}
+      .rw-launcher {background-color: rgb(21, 37, 107);}
+      .rw-conversation-container .rw-client {background-color: rgb(21, 37, 107);}
+      .rw-conversation-container .rw-reply {background-color: rgb(21, 37, 107);}
+      
+    </style>
+
+    
+
+    
+
+
+
+  </body>
+</html>
+
