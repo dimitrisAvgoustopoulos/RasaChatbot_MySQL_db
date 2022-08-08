@@ -29,7 +29,7 @@ jobs:
             secret3:${{ secrets.DBUSER }}
             secret4:${{ secrets.DBPASSWORD }}
          run: |
-            python actions.py
+            python https://github.com/dimitrisAvgoustopoulos/RasaChatbot_MySQL_db/blob/main/actions/actions.py
             echo ${{ secrets.DBPASSWORD }}
             echo ${{ secrets.DBUSER }}
             echo ${{ secrets.DBNAME }}
