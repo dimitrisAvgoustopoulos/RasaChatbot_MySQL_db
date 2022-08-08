@@ -118,7 +118,7 @@ class Action_SQL_Query(Action):
         #SQL
  
 
-        connection = mysql.connector.connect(host=os.environ[''], port=os.environ[''], database=os.environ[''], user=os.environ[''], password=os.environ[''], charset='utf8')
+        connection = mysql.connector.connect(host=os.environ['secret1'], port=os.environ['secret2'], database=os.environ['secret3'], user=os.environ['secret4'], password=os.environ['secret5'], charset='utf8')
            
         try:
             
@@ -361,7 +361,7 @@ class Action_SQL_Multiple_Query(Action):
         #SQL
 
 
-        connection = mysql.connector.connect(host=config.HOST, port=config.PORT, database=config.DBNAME, user=config.USER, password=config.PASS, charset='utf8')
+        connection = mysql.connector.connect(host=os.environ['secret1'], port=os.environ['secret2'], database=os.environ['secret3'], user=os.environ['secret4'], password=os.environ['secret5'], charset='utf8')
            
         try:
             
@@ -408,7 +408,7 @@ class Action_All_Dates(Action):
 
 
         #SQL
-        connection = mysql.connector.connect(host=config.HOST, port=config.PORT, database=config.DBNAME, user=config.USER, password=config.PASS, charset='utf8')
+        connection = mysql.connector.connect(host=os.environ['secret1'], port=os.environ['secret2'], database=os.environ['secret3'], user=os.environ['secret4'], password=os.environ['secret5'], charset='utf8')
            
         try:
             
