@@ -36,7 +36,6 @@ class Action_SQL_Query(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        import config
         
         
 
@@ -118,7 +117,7 @@ class Action_SQL_Query(Action):
         #SQL
  
 
-        connection = mysql.connector.connect(host=config.HOST, port=config.PORT, database=config.DBNAME, user=config.USER, password=config.PASS, charset='utf8')
+        connection = mysql.connector.connect(host=os.environ[''], port=os.environ[''], database=os.environ[''], user=os.environ[''], password=os.environ[''], charset='utf8')
            
         try:
             
