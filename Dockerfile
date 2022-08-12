@@ -18,8 +18,10 @@ RUN pip install rasa==3.1.0
 RUN pip install mysql
 RUN pip install mysql-connector
 RUN pip install mysql-connector-python
-RUN pip install sanic==21.9.3
-RUN pip install Sanic-Cors==1.0.1
+RUN pip install sanic==21.12.1
+RUN pip install Sanic-Cors==2.0.1
+RUN pip install sanic-jwt==1.7.0
+RUN pip install sanic-plugin-toolkit==1.2.1
 RUN pip install sanic-routing==0.7.2
 RUN pip install python-engineio==4.3.1
 RUN pip install python-socketio==5.5.0
