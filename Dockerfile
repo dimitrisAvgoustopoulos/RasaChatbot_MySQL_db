@@ -17,9 +17,12 @@ RUN pip install --no-cache-dir --upgrade pip
 RUN pip install rasa==3.1.0
 RUN pip install mysql
 RUN pip install mysql-connector
-RUN pip install mysql-connector-python==8.0.29
-RUN pip install aiohttp
-
+RUN pip install mysql-connector-python
+RUN pip install sanic==21.9.3
+RUN pip install Sanic-Cors==1.0.1
+RUN pip install sanic-routing==0.7.2
+RUN pip install python-engineio==4.3.1
+RUN pip install python-socketio==5.5.0
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
