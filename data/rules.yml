@@ -68,11 +68,15 @@ rules:
   - intent: ask_patras_event
   - action: sql_query
 
-
 - rule: query events with type and location
   steps:
   - intent: ask_type_and_location
   - action: sql_multiple_query
+
+- rule: query year events
+  steps:
+  - intent: ask_year_event
+  - action: sql_query
 
 - rule: button_location_events
   steps:
@@ -83,6 +87,11 @@ rules:
   steps:
   - intent: by_type
   - action: utter_button_typeEvents
+
+- rule: button_year_events
+  steps:
+  - intent: by_year
+  - action: utter_button_yearEvents
 
 - rule: button_date_events
   steps:
