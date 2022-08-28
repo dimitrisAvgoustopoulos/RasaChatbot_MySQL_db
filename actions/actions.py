@@ -36,6 +36,7 @@ class Action_SQL_Query(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
         
         
 
@@ -112,10 +113,17 @@ class Action_SQL_Query(Action):
                 sqlcityvar='Πάτρα'
                 sqlQuery="SELECT * FROM events WHERE city='%s'" % (sqlcityvar)
 
+        #year
+        
+        if (latEntitValue=="2022"):
+             sqlQuery="SELECT * FROM events WHERE day LIKE '2022%' "
 
+        elif(latEntitValue=="2023"):
+             sqlQuery="SELECT * FROM events WHERE day LIKE '2023%' "
 
         #SQL
  
+
         connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
            
         try:
@@ -160,7 +168,7 @@ class Action_SQL_Multiple_Query(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
 
-        import config
+
 
         #for athens events
         SeA_type= next(tracker.get_latest_entity_values(entity_type="Seminar",entity_group="1",entity_role="SeminarInAthens"), None)
@@ -353,13 +361,14 @@ class Action_SQL_Multiple_Query(Action):
                 dispatcher.utter_message("keywords: {},{}".format( FePa_type,FePa_location))
                 sqltypevar="Φεστιβάλ"
                 sqlcityvar="Πάτρα"
-                sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)   
+                sqlQuery="SELECT * FROM events WHERE type='%s' AND city='%s'" % (sqltypevar, sqlcityvar)
+                
 
 
         #SQL
 
-        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
 
+        connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
            
         try:
             
@@ -401,13 +410,13 @@ class Action_All_Dates(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        import config
-        sqlQuery="SELECT * FROM events"
 
+        sqlQuery="SELECt * FROM events"
 
+            
         #SQL
         connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
-
+           
         try:
             
             if connection.is_connected():
