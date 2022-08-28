@@ -20,14 +20,16 @@ intents:
   - ask_thessaloniki_event
   - ask_patras_event
   - ask_type_and_location
+  - ask_year_event
   - by_location
   - by_type
   - by_date
+  - by_year
   - nlu_fallback
 
 entities:
   - Location
-  - Date
+  - Year
   - Seminar
   - Speech
   - Painting
@@ -71,7 +73,11 @@ slots:
     mappings:
     - type: from_entity
       entity: Festival
-
+  year:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: Year
 
 responses:
   utter_greet:
@@ -109,6 +115,8 @@ responses:
       payload: /by_type
     - title: "Ημερομηνία"
       payload: /by_date
+    - title: "Έτος"
+      payload: /by_year  
 
  #buttons with slot value
   utter_button_locationEvents:
@@ -137,6 +145,14 @@ responses:
       payload: '/ask_concert_event{{"Concert":"συναυλία"}}'
     - title: "Φεστιβάλ"
       payload: '/ask_festival_event{{"Festival":"φεστιβάλ"}}'
+
+  utter_button_yearEvents:
+  - text: "Επέλεξε το επιθυμητό έτος"
+    buttons:
+    - title: "2022"
+      payload: '/ask_year_event{{"Year":"2022"}}'
+    - title: "2023"
+      payload: '/ask_year_event{{"Year":"2023"}}'
 
 actions:
  - sql_query
