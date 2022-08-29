@@ -11,7 +11,7 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 action_endpoint:
- url: "https://rasa-actions-server-dimitrisavgoustopoulos.cloud.okteto.net/webhook"
+ url: "https://6d9c-2a02-587-ae05-100-9020-84c1-5eb5-e078.eu.ngrok.io/webhook"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
