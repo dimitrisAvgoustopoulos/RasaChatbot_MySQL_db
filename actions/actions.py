@@ -26,7 +26,6 @@ import json
 
 
 
-
 class Action_SQL_Query(Action):
 
 
@@ -56,6 +55,7 @@ class Action_SQL_Query(Action):
         sqltypevar=""
         sqlcityvar=""
         sqlQuery=""
+
 
 
         if (latEntitType=="Seminar"):
@@ -125,12 +125,11 @@ class Action_SQL_Query(Action):
  
 
         connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
-           
+        cursor = connection.cursor() 
         try:
             
             if connection.is_connected():
-                sql_select_Query = sqlQuery
-                cursor = connection.cursor()  
+                sql_select_Query = sqlQuery  
                 cursor.execute(sql_select_Query)
                 # get all records
                 records = cursor.fetchall()
@@ -369,12 +368,11 @@ class Action_SQL_Multiple_Query(Action):
 
 
         connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
-           
+        cursor = connection.cursor()
         try:
             
             if connection.is_connected():
-                sql_select_Query = sqlQuery
-                cursor = connection.cursor()  
+                sql_select_Query = sqlQuery  
                 cursor.execute(sql_select_Query)
                 # get all records
                 records = cursor.fetchall()
@@ -416,12 +414,11 @@ class Action_All_Dates(Action):
             
         #SQL
         connection = mysql.connector.connect(host='sql11.freemysqlhosting.net', port='3306', database='sql11510372', user='sql11510372', password='AtRcf6eWe6', charset='utf8')
-           
+        cursor = connection.cursor()
         try:
             
             if connection.is_connected():
-                sql_select_Query = sqlQuery
-                cursor = connection.cursor()  
+                sql_select_Query = sqlQuery  
                 cursor.execute(sql_select_Query)
                 # get all records
                 records = cursor.fetchall()
