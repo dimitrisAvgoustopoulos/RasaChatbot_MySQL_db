@@ -18,8 +18,6 @@ RUN pip install rasa==3.1.0
 RUN pip install mysql
 RUN pip install mysql-connector
 RUN pip install mysql-connector-python
-RUN pip install sanic==21.12.1
-RUN pip install Sanic-Cors==2.0.1
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
