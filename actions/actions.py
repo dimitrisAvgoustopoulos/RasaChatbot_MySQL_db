@@ -507,7 +507,7 @@ class Action_SQL_Multiple_Query(Action):
         
         elif (( ThA_type=="θέατρο" or ThA_type=="θεατρική παράσταση" or ThA_type=="θεατρικές παραστάσεις") and (ThA_location=="Αθήνα" or ThA_location=="αθήνα") and (ThA_Year=="2022" or ThA_Year=="2023")):
        
-                dispatcher.utter_message("keywords: {},{},{}".format( ThA_type,ThA_type,ThA_Year))
+                dispatcher.utter_message("keywords: {},{},{}".format( ThA_type,ThA_location,ThA_Year))
                 sqltypevar="Θέατρο"
                 sqlcityvar="Αθήνα"
                 sqlyear=ThA_Year
