@@ -71,7 +71,12 @@ rules:
 - rule: query events with type and location
   steps:
   - intent: ask_type_and_location
-  - action: sql_multiple_query
+  - action: sql_multiple_query1
+
+- rule: query events with type location and year
+  steps:
+  - intent: ask_type_location_and_year
+  - action: sql_multiple_query2
 
 - rule: query year events
   steps:
