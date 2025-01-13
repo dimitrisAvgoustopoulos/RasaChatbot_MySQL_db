@@ -9,6 +9,7 @@ The aim of this project is to create an application that informs Persons with Di
 
 
 ## Chatbot Tech Stack
+
 <div align="left">
   <img src="https://cdn.brandfetch.io/idsnVw1SoN/theme/dark/logo.svg?c=1bfwsmEH20zzEfSNTed" height="40" alt="python logo" />
   <img width="12" />
@@ -17,3 +18,12 @@ The aim of this project is to create an application that informs Persons with Di
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo" />
   <img width="12" />
 </div>
+
+<br>
+<br>
+
+## Screenshots
+
+![Bot Screenshot](https://github.com/dimitrisAvgoustopoulos/RasaChatbot_MySQL_db/blob/main/images/chatbot-concert.png)
+![Bot Screenshot](https://github.com/dimitrisAvgoustopoulos/RasaChatbot_MySQL_db/blob/main/images/chatbot-Athens.png)
+![Bot Screenshot](https://github.com/dimitrisAvgoustopoulos/RasaChatbot_MySQL_db/blob/main/images/chatbot-human.png)
