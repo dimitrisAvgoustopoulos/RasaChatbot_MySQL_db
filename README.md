@@ -1,5 +1,6 @@
 
 # Rasa Chatbot / Bachelor Thesis
+![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## 📜Thesis ABSTRACT
 
